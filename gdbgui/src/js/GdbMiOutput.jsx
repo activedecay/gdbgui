@@ -39,11 +39,11 @@ class GdbMiOutput extends React.Component {
             </div>
           </li>
         </ul>
-        <div className="card card-body m-2">
-          <GeminiScrollbar id="gdb_mi_output"
-               className='small'>
+        <div className="card card-body m-1">
+          <div id="gdb_mi_output"
+               className='tiny monospace'>
             {this.state.gdb_mi_output}
-          </GeminiScrollbar>
+          </div>
         </div>
       </React.Fragment>
     );

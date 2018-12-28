@@ -433,7 +433,7 @@ class SourceCode extends React.Component {
   get_body_empty() {
     return (
       <tr>
-        <td><span className='small text-info m-2'>No source code or assembly to display</span></td>
+        <td><span className='small sans-serif text-info m-2 ml-4'>No source code or assembly to display</span></td>
       </tr>
     );
   }

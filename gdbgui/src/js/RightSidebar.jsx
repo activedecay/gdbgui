@@ -47,45 +47,53 @@ class RightSidebar extends React.Component {
            onMouseUp={onmouseup_in_parent_callback}
            onMouseMove={onmousemove_in_parent_callback}>
         <GeminiScrollbar>
-          <button className="btn btn-primary btn-tiny m-1"
-                  data-toggle="collapse"
-                  data-target="#threads-panel">
-            Threads
-          </button>
+          <div>
+            <button className="btn btn-primary btn-tiny mx-1"
+                    data-toggle="collapse"
+                    data-target="#threads-panel">
+              <span className={`tiny fa fa-chevron-${!section_is_visible['threads'] ? 'right' : 'down'}`}/> Threads
+            </button>
+          </div>
           <div className={`collapse ${section_is_visible['threads'] ? "show" : ""}`}
                id="threads-panel">
-            <div className="card card-body m-2">
+            <div className="card card-body m-1">
               <Threads/>
             </div>
           </div>
 
-          <button className="btn btn-primary btn-tiny m-1"
-                  data-toggle="collapse"
-                  data-target="#locals-panel">
-            Locals
-          </button>
+          <div>
+            <button className="btn btn-primary btn-tiny mx-1"
+                    data-toggle="collapse"
+                    data-target="#locals-panel">
+              <span className={`tiny fa fa-chevron-${!section_is_visible['locals'] ? 'right' : 'down'}`}/> Locals
+            </button>
+          </div>
           <div className={`collapse ${section_is_visible['locals'] ? "show" : ""}`}
                id="locals-panel">
-            <div className="card card-body m-2">
+            <div className="card card-body m-1">
               <Locals/>
             </div>
           </div>
 
-          <button className="btn btn-primary btn-tiny m-1"
-                  data-toggle="collapse"
-                  data-target="#expressions-panel">
-            Expressions
-          </button>
+          <div>
+            <button className="btn btn-primary btn-tiny mx-1"
+                    data-toggle="collapse"
+                    data-target="#expressions-panel">
+              <span className={`tiny fa fa-chevron-${!section_is_visible['expressions'] ? 'right' : 'down'}`}/> Expressions
+            </button>
+          </div>
           <div className={`collapse ${section_is_visible['expressions'] ? "show" : ""}`}
                id="expressions-panel">
             <Expressions/>
           </div>
 
-          <button className="btn btn-primary btn-tiny m-1"
-                  data-toggle="collapse"
-                  data-target="#tree-panel">
-            Tree
-          </button>
+          <div>
+            <button className="btn btn-primary btn-tiny mx-1"
+                    data-toggle="collapse"
+                    data-target="#tree-panel">
+              <span className={`tiny fa fa-chevron-${!section_is_visible['tree'] ? 'right' : 'down'}`}/> Tree
+            </button>
+          </div>
           <div className={`collapse ${section_is_visible['tree'] ? "show" : ""}`}
                id="tree-panel">
             <ul className="nav my-1 px-1">
@@ -100,67 +108,77 @@ class RightSidebar extends React.Component {
                 </div>
               </li>
             </ul>
-            <div className="card card-body m-2">
+            <div className="card card-body m-1">
               <div className='shadow-lg'
                    id={constants.tree_component_id}/>
             </div>
           </div>
 
-          <button className="btn btn-primary btn-tiny m-1"
-                  data-toggle="collapse"
-                  data-target="#memory-panel">
-            Memory
-          </button>
+          <div>
+            <button className="btn btn-primary btn-tiny mx-1"
+                    data-toggle="collapse"
+                    data-target="#memory-panel">
+              <span className={`tiny fa fa-chevron-${!section_is_visible['memory'] ? 'right' : 'down'}`}/> Memory
+            </button>
+          </div>
           <div className={`collapse ${section_is_visible['memory'] ? "show" : ""}`}
                id="memory-panel">
-            <div className="card card-body m-2">
+            <div className="card card-body m-1">
               <Memory/>
             </div>
           </div>
 
-          <button className="btn btn-primary btn-tiny m-1"
-                  data-toggle="collapse"
-                  data-target="#breakpoints-panel">
-            Breakpoints
-          </button>
+          <div>
+            <button className="btn btn-primary btn-tiny mx-1"
+                    data-toggle="collapse"
+                    data-target="#breakpoints-panel">
+              <span className={`tiny fa fa-chevron-${!section_is_visible['breakpoints'] ? 'right' : 'down'}`}/> Breakpoints
+            </button>
+          </div>
           <div className={`collapse ${section_is_visible['breakpoints'] ? "show" : ""}`}
                id="breakpoints-panel">
-            <div className="card card-body m-2">
+            <div className="card card-body m-1">
               <Breakpoints/>
             </div>
           </div>
 
-          <button className="btn btn-primary btn-tiny m-1"
-                  data-toggle="collapse"
-                  data-target="#signals-panel">
-            Signals
-          </button>
+          <div>
+            <button className="btn btn-primary btn-tiny mx-1"
+                    data-toggle="collapse"
+                    data-target="#signals-panel">
+              <span className={`tiny fa fa-chevron-${!section_is_visible['signals'] ? 'right' : 'down'}`}/> Signals
+            </button>
+          </div>
           <div className={`collapse ${section_is_visible['signals'] ? "show" : ""}`}
                id="signals-panel">
-            <div className="card card-body m-2">
+            <div className="card card-body m-1">
               <InferiorProgramInfo signals={this.props.signals}/>
             </div>
           </div>
 
-          <button className="btn btn-primary btn-tiny m-1"
-                  data-toggle="collapse"
-                  data-target="#registers-panel">
-            Registers
-          </button>
+          <div>
+            <button className="btn btn-primary btn-tiny mx-1"
+                    data-toggle="collapse"
+                    data-target="#registers-panel">
+              <span className={`tiny fa fa-chevron-${!section_is_visible['registers'] ? 'right' : 'down'}`}/> Registers
+            </button>
+          </div>
           <div className={`collapse ${section_is_visible['registers'] ? "show" : ""}`}
                id="registers-panel">
-            <div className="card card-body m-2">
+            <div className="card card-body m-1">
               <Registers/>
             </div>
           </div>
 
           {this.props.debug ? (
             <React.Fragment>
-              <button className="btn btn-primary btn-tiny m-1"
-                      data-toggle="collapse"
-                      data-target="#debug-panel">
-                Debug
-              </button>
+              <div>
+                <button className="btn btn-primary btn-tiny mx-1"
+                        data-toggle="collapse"
+                        data-target="#debug-panel">
+                  <span className={`tiny fa fa-chevron-${!section_is_visible['debug'] ? 'right' : 'down'}`}/> Debug
+                </button>
+              </div>
               <div className={`collapse ${section_is_visible['debug'] ? "show" : ""}`}
                    id="debug-panel">
                 <GdbMiOutput id="gdb_mi_output"/>

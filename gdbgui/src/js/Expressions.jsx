@@ -63,7 +63,7 @@ class Expressions extends React.Component {
             </div>
           </li>
         </ul>
-        <div className="card card-body m-2">
+        <div className="card card-body m-1">
           {content}
         </div>
       </React.Fragment>

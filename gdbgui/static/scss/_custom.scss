@@ -1,11 +1,13 @@
 /* customizes bootstrap */
-
-
 @import "~bootswatch/dist/darkly/variables";
 @import "~bootstrap/scss/bootstrap";
 @import "~bootswatch/dist/darkly/bootswatch";
 
 $enable-shadows: true;
+
+.small {
+  font-size: 0.8rem;
+}
 
 .card-body {
   padding: .5em;
@@ -21,6 +23,7 @@ table.table.table-condensed {
 
 .list-unstyled {
   margin-bottom: 0;
+
   &.list-unstyled-pad {
     padding-left: 1.9rem;
   }
@@ -73,3 +76,28 @@ select.custom-select.md-grow,
 @import "~animate.css/animate.min.css";
 
 @import '~gemini-scrollbar/gemini-scrollbar.css';
+
+.gm-scrollbar.-vertical {
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.gm-scrollbar.-horizontal {
+  left: 0;
+  right: 5px;
+  bottom: 0;
+}
+
+.gm-scrollbar.-vertical,
+.gm-scrollbar.-horizontal {
+  background: $gray-900;
+}
+
+.gm-scrollbar.-vertical > .thumb {
+  background-color: $gray-700;
+}
+
+.gm-scrollbar .thumb:hover,
+.gm-scrollbar .thumb:active {
+  background-color: $gray-600;
+}

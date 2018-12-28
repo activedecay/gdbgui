@@ -47,13 +47,13 @@ class BinaryLoader extends React.Component {
         "Loads the binary as executed with the arguments. Backslashes are treated as " +
         "escape characters. Windows users can either use two backslashes in paths, or " +
         "forward slashes. (l)"
-      placeholder = "/path/to/target/executable -and -flags";
+      placeholder = "path to target executable with arguments, e.g. /home/dev/code --args";
     } else if (this.state.target_type === TARGET_TYPES.server) {
       // https://sourceware.org/gdb/onlinedocs/gdb/GDB_002fMI-Target-Manipulation.html#GDB_002fMI-Target-Manipulation
       // -target-select
-      button_text = "Connect to gdbserver";
+      button_text = "Connect gdbserver";
       title = "Connect GDB to the remote target.";
-      placeholder = "examples: 127.0.0.1:9999 | /dev/ttya";
+      placeholder = "server address, e.g. 127.0.0.1:9999 or device path, e.g. /dev/ttya";
     } else if (this.state.target_type === TARGET_TYPES.process) {
       // -target-attach
       button_text = "Attach process";
@@ -61,7 +61,7 @@ class BinaryLoader extends React.Component {
         "Attach to a process pid or a file file outside of GDB, or a thread group gid. If " +
         "attaching to a thread group, the id previously returned by ‘-list-thread-groups " +
         "--available’ must be used. Note: to do this, you usually need to run gdbgui as sudo.";
-      placeholder = "pid | gid | file";
+      placeholder = "pid, gid or file path";
     }
 
     return (
@@ -124,7 +124,7 @@ class BinaryLoader extends React.Component {
 
         <ToolTipTourguide
           step_num={1}
-          position={"bottomcenter"}
+          position={"bottom"}
           content={step1}/>
         <ToolTipTourguide
           step_num={2}

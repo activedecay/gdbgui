@@ -57,52 +57,55 @@ class FoldersView extends React.Component {
 
     return this.state.show_filesystem ? <div className='col-3'>
       <GeminiScrollbar id='folders-view'>
-        <div className="input-group input-group-sm my-1">
-          <div className="input-group-prepend">
-            <button
-              onClick={Actions.fetch_source_files}
-              className="btn btn-primary">
-              Fetch files
-            </button>
+        <div className="p-2">
+          <div className="input-group input-group-sm my-1">
+            <div className="input-group-prepend">
+              <button
+                  onClick={Actions.fetch_source_files}
+                  className="btn btn-primary">
+                Fetch files
+              </button>
+            </div>
+            <SourceFileAutocomplete className={'input-group'}/>
           </div>
-          <SourceFileAutocomplete className={'input-group'}/>
-        </div>
 
-        {hiding_entries ? <p className='small text-warning my-1'>
-          Maximum entries in tree below is {this.max_filesystem_entries} (hiding{" "}
-          {store.get("source_file_paths").length - this.max_filesystem_entries}). All
-          files can still be searched for in the input above.
-        </p> : null}
+          {hiding_entries ? <p className='small text-warning my-1'>
+            Maximum entries in tree below is {this.max_filesystem_entries} (hiding{" "}
+            {store.get("source_file_paths").length - this.max_filesystem_entries}). All
+            files can still be searched for in the input above.
+          </p> : null}
 
-        <div className='input-group input-group-sm my-1'>
-          <div className="input-group-prepend">
+          <div className='input-group input-group-sm my-1'>
+            <div className="input-group-prepend">
             <span className='input-group-text'>
               Files found: {known_files}
             </span>
+            </div>
+            <div className="input-group-append">
+              <button className="btn btn-primary"
+                      title='Expand all folders'
+                      onClick={this.expand_all}>
+                <span className='fa fa-expand'/>
+              </button>
+              <button className="btn btn-primary"
+                      title='Collapse all folders'
+                      onClick={this.collapse_all}>
+                <span className='fa fa-compress'/>
+              </button>
+              {can_reveal ? <button
+                  className={"btn btn-primary"}
+                  title='Reveal current file'
+                  onClick={() => this.reveal_path(store.get("fullname_to_render"))}>
+                <span className='fa fa-eye'/>
+              </button> : null}
+            </div>
           </div>
-          <div className="input-group-append">
-            <button className="btn btn-primary"
-                    title='Expand all folders'
-                    onClick={this.expand_all}>
-              <span className='fa fa-expand'/>
-            </button>
-            <button className="btn btn-primary"
-                    title='Collapse all folders'
-                    onClick={this.collapse_all}>
-              <span className='fa fa-compress'/>
-            </button>
-            {can_reveal ? <button
-              className={"btn btn-primary"}
-              title='Reveal current file'
-              onClick={() => this.reveal_path(store.get("fullname_to_render"))}>
-              <span className='fa fa-eye'/>
-            </button> : null}
-          </div>
-        </div>
 
-        <FileSystem rootnode={this.state.rootnode}
-                    onToggle={this.onToggle}
-                    onClickName={this.onClickName}/>
+          <FileSystem rootnode={this.state.rootnode}
+                      onToggle={this.onToggle}
+                      onClickName={this.onClickName}/>
+
+        </div>
       </GeminiScrollbar>
     </div> : null;
   }

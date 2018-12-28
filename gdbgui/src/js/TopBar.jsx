@@ -116,7 +116,7 @@ const menu = (
         className="dropdown-item"
         title="show guide"
         onClick={ToolTipTourguide.start_guide}>
-        Show Guide
+        Show guide
       </a></li>
       <li><a
         className="dropdown-item"
@@ -169,8 +169,7 @@ const menu = (
       </a></li>
     </div>
     <ToolTipTourguide
-      top={"100%"}
-      left={"-300px"}
+      position={"bottomleft"}
       step_num={0}
       content={step0}/>
   </div>

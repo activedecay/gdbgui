@@ -5,7 +5,7 @@ import {store} from "statorgfc";
 class ToolTipTourguide extends React.Component {
   constructor(props) {
     super(props);
-    if (!props.position && !(props.top && props.left)) {
+    if (!(props.position || props.top || props.right || props.bottom || props.left)) {
       console.warn("did not receive position");
     }
     this.ref = React.createRef();
@@ -71,12 +71,9 @@ class ToolTipTourguide extends React.Component {
         left = "50%";
         break;
       default:
-        console.warn("invalid position " + this.props.position);
-        top = "100%";
-        left = "50%";
         break;
     }
-    return [top, left];
+    return {top, left};
   }
 
   render() {
@@ -86,33 +83,25 @@ class ToolTipTourguide extends React.Component {
       return null;
     }
 
-    let top
-    // , left;
-    if (this.props.top && this.props.left) {
-      top = this.props.top;
-      // left = this.props.left;
-    } else {
-      [top, /*left*/] = this.get_position(this.props.position);
-    }
+    let {top,right,bottom,left,position} = this.props
+    let final = {top,right,bottom,left,...this.get_position(position)}
+    console.info(final)
 
     let is_last_step = this.props.step_num + 1 === this.state.num_tour_guide_steps
     return (
-      <div
-        ref={this.ref}
-        className='modal-content shadow-lg'
-        style={{
-          minWidth: "200px",
-          maxWidth: "350px",
-          zIndex: "1000",
-          position: "absolute",
-          overflow: "auto",
-          whiteSpace: "normal",
-          left: 0,
-          top: top,
-          fontSize: "small",
-          pointer: "normal"
-        }}
-      >
+      <div ref={this.ref}
+           className='modal-content shadow-lg'
+           style={{
+             minWidth: "200px",
+             maxWidth: "350px",
+             zIndex: "1000",
+             position: "absolute",
+             overflow: "auto",
+             whiteSpace: "normal",
+             ..._.omitBy(final, _.isNil),
+             fontSize: "small",
+             pointer: "normal"
+           }}>
         <div className="modal-body">
           {this.props.content}
           <p>
