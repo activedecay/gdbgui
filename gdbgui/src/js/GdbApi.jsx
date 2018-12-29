@@ -12,16 +12,10 @@ import constants from "./constants.js";
 import process_gdb_response from "./process_gdb_response.js";
 import React from "react";
 void React; // needed when using JSX, but not marked as used
-
-/* global debug */
-
-// print to console if debug is true
-let debug_print;
-try {
-  debug_print = debug ? console.info : _.noop
-} catch (e) {
-  debug_print = _.noop
-}
+import debug from 'debug'
+const log = debug('gdbgui:gdbapi:info')
+const error = debug('gdbgui:gdbapi:error')
+debug.enabled('gdbgui:*')
 
 /**
  * This object contains methods to interact with
@@ -40,7 +34,7 @@ const GdbApi = {
     );
 
     GdbApi.socket.on("connect", function() {
-      debug_print("connected");
+      log("connected");
     });
 
     GdbApi.socket.on("gdb_response", function(response_array) {
@@ -100,7 +94,7 @@ const GdbApi = {
           The gdbgui server has shutdown. This tab will no longer function as expected.
         </span>
       );
-      debug_print("disconnected");
+      log("disconnected");
       if (debug) {
         window.location.reload(true);
       }
@@ -200,9 +194,7 @@ const GdbApi = {
       }
       GdbApi.run_gdb_command(cmds);
     } else {
-      console.error(
-        "expected cmd or cmd0 [cmd1, cmd2, ...] data attribute(s) on element"
-      );
+      error("expected cmd or cmd0 [cmd1, cmd2, ...] data attribute(s) on element");
     }
   },
   select_frame: function(framenum) {
@@ -283,10 +275,6 @@ const GdbApi = {
    * @param user_cmd (str or array): command or commands to run before refreshing store
    */
   run_command_and_refresh_state: function(user_cmd) {
-    // if(!user_cmd){
-    //     console.error('missing required argument')
-    //     return
-    // }
     let cmds = [];
     if (_.isArray(user_cmd)) {
       cmds = cmds.concat(user_cmd);

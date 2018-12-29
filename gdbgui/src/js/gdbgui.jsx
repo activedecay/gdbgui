@@ -7,7 +7,7 @@
  */
 
 /* global initial_data */
-/* global debug */
+/* global debug_enabled */
 
 import 'bootstrap';
 import 'jquery.flot'
@@ -31,14 +31,18 @@ import ToolTip from "./ToolTip.jsx";
 import TopBar from "./TopBar.jsx";
 import ToolTipTourguide from "./ToolTipTourguide.jsx";
 import {step4} from "./TourGuide.jsx";
-// import Split from 'split.js'
+import PanelGroup from "./PanelGroup";
+
+import debug from 'debug'
+const l = debug('gdbgui:gdbgui')
+l.enabled = debug_enabled
 
 const store_options = {
   immutable: false,
   debounce_ms: 10
 };
 store.initialize(initial_store_data, store_options);
-if (debug) {
+if (l.enabled) {
   // log call store changes in console except if changed key was in
   // constants.keys_to_not_log_changes_in_console
   store.use(function (key, oldval, newval) {
@@ -67,9 +71,27 @@ class Gdbgui extends React.PureComponent {
 
 
   render() {
-    return (
-      <div>
+    return (debug_enabled ?
+      <div className='application-container'>
         <TopBar initial_user_input={initial_data.initial_binary_and_args}/>
+        <PanelGroup borderClassName='divider-border'
+                    direction='column'
+                    spacing={4}>
+
+          <PanelGroup borderClassName='divider-border'
+                      panelWidths={[{
+                        size: 100,
+                        resize: 'dynamic'
+                      }, {resize: 'stretch'}, {resize: 'dynamic'},]}
+                      spacing={4}>
+            <div className='panel-group bg-light'>wow</div>
+            <div className='panel-group bg-info'>cool</div>
+            <div className='panel-group bg-dark'>story</div>
+          </PanelGroup>
+          <div>footer</div>
+        </PanelGroup>
+      </div> :
+      <div>
 
         <div className="row no-gutters">
           <FoldersView/>

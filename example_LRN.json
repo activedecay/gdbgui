@@ -1,0 +1,2290 @@
+[
+  {
+    "type": "result",
+    "message": "done",
+    "payload": null,
+    "token": null,
+    "stream": "stdout"
+  },
+  {
+    "type": "notify",
+    "message": "breakpoint-modified",
+    "payload": {
+      "bkpt": {
+        "number": "1",
+        "type": "breakpoint",
+        "disp": "keep",
+        "enabled": "y",
+        "addr": "0x00000000000006f5",
+        "func": "main",
+        "file": "hello.c",
+        "fullname": "/home/justin/hack/gdbgui/examples/c/hello.c",
+        "line": "31",
+        "thread-groups": [
+          "i1"
+        ],
+        "times": "1",
+        "original-location": "main"
+      }
+    },
+    "token": null,
+    "stream": "stdout"
+  },
+  {
+    "type": "notify",
+    "message": "breakpoint-modified",
+    "payload": {
+      "bkpt": {
+        "number": "2",
+        "type": "breakpoint",
+        "disp": "keep",
+        "enabled": "y",
+        "addr": "0x00000000000006f5",
+        "func": "main",
+        "file": "hello.c",
+        "fullname": "/home/justin/hack/gdbgui/examples/c/hello.c",
+        "line": "31",
+        "thread-groups": [
+          "i1"
+        ],
+        "times": "1",
+        "original-location": "main"
+      }
+    },
+    "token": null,
+    "stream": "stdout"
+  },
+  {
+    "type": "result",
+    "message": "done",
+    "payload": null,
+    "token": null,
+    "stream": "stdout"
+  },
+  {
+    "type": "result",
+    "message": "done",
+    "payload": {
+      "bkpt": {
+        "number": "3",
+        "type": "breakpoint",
+        "disp": "keep",
+        "enabled": "y",
+        "addr": "0x00000000000006f5",
+        "func": "main",
+        "file": "hello.c",
+        "fullname": "/home/justin/hack/gdbgui/examples/c/hello.c",
+        "line": "31",
+        "thread-groups": [
+          "i1"
+        ],
+        "times": "0",
+        "original-location": "main"
+      }
+    },
+    "token": null,
+    "stream": "stdout"
+  },
+  {
+    "type": "result",
+    "message": "done",
+    "payload": {
+      "BreakpointTable": {
+        "nr_rows": "3",
+        "nr_cols": "6",
+        "hdr": [
+          {
+            "width": "7",
+            "alignment": "-1",
+            "col_name": "number",
+            "colhdr": "Num"
+          },
+          {
+            "width": "14",
+            "alignment": "-1",
+            "col_name": "type",
+            "colhdr": "Type"
+          },
+          {
+            "width": "4",
+            "alignment": "-1",
+            "col_name": "disp",
+            "colhdr": "Disp"
+          },
+          {
+            "width": "3",
+            "alignment": "-1",
+            "col_name": "enabled",
+            "colhdr": "Enb"
+          },
+          {
+            "width": "18",
+            "alignment": "-1",
+            "col_name": "addr",
+            "colhdr": "Address"
+          },
+          {
+            "width": "40",
+            "alignment": "2",
+            "col_name": "what",
+            "colhdr": "What"
+          }
+        ],
+        "body": [
+          {
+            "number": "1",
+            "type": "breakpoint",
+            "disp": "keep",
+            "enabled": "y",
+            "addr": "0x00000000000006f5",
+            "func": "main",
+            "file": "hello.c",
+            "fullname": "/home/justin/hack/gdbgui/examples/c/hello.c",
+            "line": "31",
+            "thread-groups": [
+              "i1"
+            ],
+            "times": "1",
+            "original-location": "main"
+          },
+          {
+            "number": "2",
+            "type": "breakpoint",
+            "disp": "keep",
+            "enabled": "y",
+            "addr": "0x00000000000006f5",
+            "func": "main",
+            "file": "hello.c",
+            "fullname": "/home/justin/hack/gdbgui/examples/c/hello.c",
+            "line": "31",
+            "thread-groups": [
+              "i1"
+            ],
+            "times": "1",
+            "original-location": "main"
+          },
+          {
+            "number": "3",
+            "type": "breakpoint",
+            "disp": "keep",
+            "enabled": "y",
+            "addr": "0x00000000000006f5",
+            "func": "main",
+            "file": "hello.c",
+            "fullname": "/home/justin/hack/gdbgui/examples/c/hello.c",
+            "line": "31",
+            "thread-groups": [
+              "i1"
+            ],
+            "times": "0",
+            "original-location": "main"
+          }
+        ]
+      }
+    },
+    "token": null,
+    "stream": "stdout"
+  },
+  {
+    "type": "result",
+    "message": "done",
+    "payload": {
+      "BreakpointTable": {
+        "nr_rows": "3",
+        "nr_cols": "6",
+        "hdr": [
+          {
+            "width": "7",
+            "alignment": "-1",
+            "col_name": "number",
+            "colhdr": "Num"
+          },
+          {
+            "width": "14",
+            "alignment": "-1",
+            "col_name": "type",
+            "colhdr": "Type"
+          },
+          {
+            "width": "4",
+            "alignment": "-1",
+            "col_name": "disp",
+            "colhdr": "Disp"
+          },
+          {
+            "width": "3",
+            "alignment": "-1",
+            "col_name": "enabled",
+            "colhdr": "Enb"
+          },
+          {
+            "width": "18",
+            "alignment": "-1",
+            "col_name": "addr",
+            "colhdr": "Address"
+          },
+          {
+            "width": "40",
+            "alignment": "2",
+            "col_name": "what",
+            "colhdr": "What"
+          }
+        ],
+        "body": [
+          {
+            "number": "1",
+            "type": "breakpoint",
+            "disp": "keep",
+            "enabled": "y",
+            "addr": "0x00000000000006f5",
+            "func": "main",
+            "file": "hello.c",
+            "fullname": "/home/justin/hack/gdbgui/examples/c/hello.c",
+            "line": "31",
+            "thread-groups": [
+              "i1"
+            ],
+            "times": "1",
+            "original-location": "main"
+          },
+          {
+            "number": "2",
+            "type": "breakpoint",
+            "disp": "keep",
+            "enabled": "y",
+            "addr": "0x00000000000006f5",
+            "func": "main",
+            "file": "hello.c",
+            "fullname": "/home/justin/hack/gdbgui/examples/c/hello.c",
+            "line": "31",
+            "thread-groups": [
+              "i1"
+            ],
+            "times": "1",
+            "original-location": "main"
+          },
+          {
+            "number": "3",
+            "type": "breakpoint",
+            "disp": "keep",
+            "enabled": "y",
+            "addr": "0x00000000000006f5",
+            "func": "main",
+            "file": "hello.c",
+            "fullname": "/home/justin/hack/gdbgui/examples/c/hello.c",
+            "line": "31",
+            "thread-groups": [
+              "i1"
+            ],
+            "times": "0",
+            "original-location": "main"
+          }
+        ]
+      }
+    },
+    "token": null,
+    "stream": "stdout"
+  },
+  {
+    "type": "notify",
+    "message": "thread-exited",
+    "payload": {
+      "id": "1",
+      "group-id": "i1"
+    },
+    "token": null,
+    "stream": "stdout"
+  },
+  {
+    "type": "notify",
+    "message": "thread-group-exited",
+    "payload": {
+      "id": "i1"
+    },
+    "token": null,
+    "stream": "stdout"
+  },
+  {
+    "type": "notify",
+    "message": "library-unloaded",
+    "payload": {
+      "id": "/lib64/ld-linux-x86-64.so.2",
+      "target-name": "/lib64/ld-linux-x86-64.so.2",
+      "host-name": "/lib64/ld-linux-x86-64.so.2",
+      "thread-group": "i1"
+    },
+    "token": null,
+    "stream": "stdout"
+  },
+  {
+    "type": "notify",
+    "message": "library-unloaded",
+    "payload": {
+      "id": "/lib/x86_64-linux-gnu/libc.so.6",
+      "target-name": "/lib/x86_64-linux-gnu/libc.so.6",
+      "host-name": "/lib/x86_64-linux-gnu/libc.so.6",
+      "thread-group": "i1"
+    },
+    "token": null,
+    "stream": "stdout"
+  },
+  {
+    "type": "notify",
+    "message": "thread-group-started",
+    "payload": {
+      "id": "i1",
+      "pid": "11950"
+    },
+    "token": null,
+    "stream": "stdout"
+  },
+  {
+    "type": "notify",
+    "message": "thread-created",
+    "payload": {
+      "id": "1",
+      "group-id": "i1"
+    },
+    "token": null,
+    "stream": "stdout"
+  },
+  {
+    "type": "notify",
+    "message": "breakpoint-modified",
+    "payload": {
+      "bkpt": {
+        "number": "1",
+        "type": "breakpoint",
+        "disp": "keep",
+        "enabled": "y",
+        "addr": "0x0000555555554704",
+        "func": "main",
+        "file": "hello.c",
+        "fullname": "/home/justin/hack/gdbgui/examples/c/hello.c",
+        "line": "32",
+        "thread-groups": [
+          "i1"
+        ],
+        "times": "0",
+        "original-location": "main"
+      }
+    },
+    "token": null,
+    "stream": "stdout"
+  },
+  {
+    "type": "notify",
+    "message": "breakpoint-modified",
+    "payload": {
+      "bkpt": {
+        "number": "2",
+        "type": "breakpoint",
+        "disp": "keep",
+        "enabled": "y",
+        "addr": "0x0000555555554704",
+        "func": "main",
+        "file": "hello.c",
+        "fullname": "/home/justin/hack/gdbgui/examples/c/hello.c",
+        "line": "32",
+        "thread-groups": [
+          "i1"
+        ],
+        "times": "0",
+        "original-location": "main"
+      }
+    },
+    "token": null,
+    "stream": "stdout"
+  },
+  {
+    "type": "notify",
+    "message": "breakpoint-modified",
+    "payload": {
+      "bkpt": {
+        "number": "3",
+        "type": "breakpoint",
+        "disp": "keep",
+        "enabled": "y",
+        "addr": "0x0000555555554704",
+        "func": "main",
+        "file": "hello.c",
+        "fullname": "/home/justin/hack/gdbgui/examples/c/hello.c",
+        "line": "32",
+        "thread-groups": [
+          "i1"
+        ],
+        "times": "0",
+        "original-location": "main"
+      }
+    },
+    "token": null,
+    "stream": "stdout"
+  },
+  {
+    "type": "notify",
+    "message": "library-loaded",
+    "payload": {
+      "id": "/lib64/ld-linux-x86-64.so.2",
+      "target-name": "/lib64/ld-linux-x86-64.so.2",
+      "host-name": "/lib64/ld-linux-x86-64.so.2",
+      "symbols-loaded": "0",
+      "thread-group": "i1",
+      "ranges": [
+        {
+          "from": "0x00007ffff7dd5f10",
+          "to": "0x00007ffff7df4b20"
+        }
+      ]
+    },
+    "token": null,
+    "stream": "stdout"
+  },
+  {
+    "type": "result",
+    "message": "running",
+    "payload": null,
+    "token": null,
+    "stream": "stdout"
+  },
+  {
+    "type": "notify",
+    "message": "running",
+    "payload": {
+      "thread-id": "all"
+    },
+    "token": null,
+    "stream": "stdout"
+  },
+  {
+    "type": "console",
+    "message": null,
+    "payload": "[Switching to thread 1 (process 11950)](running)\\n",
+    "stream": "stdout"
+  },
+  {
+    "type": "notify",
+    "message": "thread-selected",
+    "payload": {
+      "id": "1"
+    },
+    "token": null,
+    "stream": "stdout"
+  },
+  {
+    "type": "notify",
+    "message": "library-loaded",
+    "payload": {
+      "id": "/lib/x86_64-linux-gnu/libc.so.6",
+      "target-name": "/lib/x86_64-linux-gnu/libc.so.6",
+      "host-name": "/lib/x86_64-linux-gnu/libc.so.6",
+      "symbols-loaded": "0",
+      "thread-group": "i1",
+      "ranges": [
+        {
+          "from": "0x00007ffff7a052d0",
+          "to": "0x00007ffff7b7dc3c"
+        }
+      ]
+    },
+    "token": null,
+    "stream": "stdout"
+  },
+  {
+    "type": "notify",
+    "message": "breakpoint-modified",
+    "payload": {
+      "bkpt": {
+        "number": "1",
+        "type": "breakpoint",
+        "disp": "keep",
+        "enabled": "y",
+        "addr": "0x0000555555554704",
+        "func": "main",
+        "file": "hello.c",
+        "fullname": "/home/justin/hack/gdbgui/examples/c/hello.c",
+        "line": "32",
+        "thread-groups": [
+          "i1"
+        ],
+        "times": "1",
+        "original-location": "main"
+      }
+    },
+    "token": null,
+    "stream": "stdout"
+  },
+  {
+    "type": "notify",
+    "message": "breakpoint-modified",
+    "payload": {
+      "bkpt": {
+        "number": "2",
+        "type": "breakpoint",
+        "disp": "keep",
+        "enabled": "y",
+        "addr": "0x0000555555554704",
+        "func": "main",
+        "file": "hello.c",
+        "fullname": "/home/justin/hack/gdbgui/examples/c/hello.c",
+        "line": "32",
+        "thread-groups": [
+          "i1"
+        ],
+        "times": "1",
+        "original-location": "main"
+      }
+    },
+    "token": null,
+    "stream": "stdout"
+  },
+  {
+    "type": "notify",
+    "message": "breakpoint-modified",
+    "payload": {
+      "bkpt": {
+        "number": "3",
+        "type": "breakpoint",
+        "disp": "keep",
+        "enabled": "y",
+        "addr": "0x0000555555554704",
+        "func": "main",
+        "file": "hello.c",
+        "fullname": "/home/justin/hack/gdbgui/examples/c/hello.c",
+        "line": "32",
+        "thread-groups": [
+          "i1"
+        ],
+        "times": "1",
+        "original-location": "main"
+      }
+    },
+    "token": null,
+    "stream": "stdout"
+  },
+  {
+    "type": "console",
+    "message": null,
+    "payload": "\\n",
+    "stream": "stdout"
+  },
+  {
+    "type": "console",
+    "message": null,
+    "payload": "Breakpoint 1, main (argc=5, argv=0x7fffffffe0d8) at hello.c:32\\n",
+    "stream": "stdout"
+  },
+  {
+    "type": "console",
+    "message": null,
+    "payload": "32\\t printf(\\\"Hello World\\\\n\\\");\\n",
+    "stream": "stdout"
+  },
+  {
+    "type": "notify",
+    "message": "stopped",
+    "payload": {
+      "reason": "breakpoint-hit",
+      "disp": "keep",
+      "bkptno": "1",
+      "frame": {
+        "addr": "0x0000555555554704",
+        "func": "main",
+        "args": [
+          {
+            "name": "argc",
+            "value": "5"
+          },
+          {
+            "name": "argv",
+            "value": "0x7fffffffe0d8"
+          }
+        ],
+        "file": "hello.c",
+        "fullname": "/home/justin/hack/gdbgui/examples/c/hello.c",
+        "line": "32"
+      },
+      "thread-id": "1",
+      "stopped-threads": "all",
+      "core": "4"
+    },
+    "token": null,
+    "stream": "stdout"
+  },
+  {
+    "type": "result",
+    "message": "done",
+    "payload": {
+      "threads": [
+        {
+          "id": "1",
+          "target-id": "process 11950",
+          "name": "hello_c.a",
+          "frame": {
+            "level": "0",
+            "addr": "0x0000555555554704",
+            "func": "main",
+            "args": [
+              {
+                "name": "argc",
+                "value": "5"
+              },
+              {
+                "name": "argv",
+                "value": "0x7fffffffe0d8"
+              }
+            ],
+            "file": "hello.c",
+            "fullname": "/home/justin/hack/gdbgui/examples/c/hello.c",
+            "line": "32"
+          },
+          "state": "stopped",
+          "core": "4"
+        }
+      ],
+      "current-thread-id": "1"
+    },
+    "token": 1,
+    "stream": "stdout"
+  },
+  {
+    "type": "result",
+    "message": "done",
+    "payload": {
+      "variables": [
+        {
+          "name": "argc",
+          "arg": "1",
+          "type": "int",
+          "value": "5"
+        },
+        {
+          "name": "argv",
+          "arg": "1",
+          "type": "char **",
+          "value": "0x7fffffffe0d8"
+        },
+        {
+          "name": "retval",
+          "type": "int",
+          "value": "15775231"
+        },
+        {
+          "name": "s",
+          "type": "struct mystruct_t"
+        }
+      ]
+    },
+    "token": 1,
+    "stream": "stdout"
+  },
+  {
+    "type": "result",
+    "message": "done",
+    "payload": {
+      "changelist": []
+    },
+    "token": 1,
+    "stream": "stdout"
+  },
+  {
+    "type": "result",
+    "message": "done",
+    "payload": {
+      "register-values": [
+        {
+          "number": "0",
+          "value": "0x5555555546f5"
+        },
+        {
+          "number": "1",
+          "value": "0x0"
+        },
+        {
+          "number": "2",
+          "value": "0x5555555547e0"
+        },
+        {
+          "number": "3",
+          "value": "0x7fffffffe108"
+        },
+        {
+          "number": "4",
+          "value": "0x7fffffffe0d8"
+        },
+        {
+          "number": "5",
+          "value": "0x5"
+        },
+        {
+          "number": "6",
+          "value": "0x7fffffffdff0"
+        },
+        {
+          "number": "7",
+          "value": "0x7fffffffdf90"
+        },
+        {
+          "number": "8",
+          "value": "0x7ffff7dd0d80"
+        },
+        {
+          "number": "9",
+          "value": "0x7ffff7dd0d80"
+        },
+        {
+          "number": "10",
+          "value": "0x2"
+        },
+        {
+          "number": "11",
+          "value": "0x7"
+        },
+        {
+          "number": "12",
+          "value": "0x5555555545d0"
+        },
+        {
+          "number": "13",
+          "value": "0x7fffffffe0d0"
+        },
+        {
+          "number": "14",
+          "value": "0x0"
+        },
+        {
+          "number": "15",
+          "value": "0x0"
+        },
+        {
+          "number": "16",
+          "value": "0x555555554704"
+        },
+        {
+          "number": "17",
+          "value": "0x206"
+        },
+        {
+          "number": "18",
+          "value": "0x33"
+        },
+        {
+          "number": "19",
+          "value": "0x2b"
+        },
+        {
+          "number": "20",
+          "value": "0x0"
+        },
+        {
+          "number": "21",
+          "value": "0x0"
+        },
+        {
+          "number": "22",
+          "value": "0x0"
+        },
+        {
+          "number": "23",
+          "value": "0x0"
+        },
+        {
+          "number": "24",
+          "value": "0x0"
+        },
+        {
+          "number": "25",
+          "value": "0x0"
+        },
+        {
+          "number": "26",
+          "value": "0x0"
+        },
+        {
+          "number": "27",
+          "value": "0x0"
+        },
+        {
+          "number": "28",
+          "value": "0x0"
+        },
+        {
+          "number": "29",
+          "value": "0x0"
+        },
+        {
+          "number": "30",
+          "value": "0x0"
+        },
+        {
+          "number": "31",
+          "value": "0x0"
+        },
+        {
+          "number": "32",
+          "value": "0x10"
+        },
+        {
+          "number": "33",
+          "value": "0x0"
+        },
+        {
+          "number": "34",
+          "value": "0xaabf"
+        },
+        {
+          "number": "35",
+          "value": "0x7ffe"
+        },
+        {
+          "number": "36",
+          "value": "0xc1261567"
+        },
+        {
+          "number": "37",
+          "value": "0x55f8"
+        },
+        {
+          "number": "38",
+          "value": "0x0"
+        },
+        {
+          "number": "39",
+          "value": "0x0"
+        },
+        {
+          "number": "40",
+          "value": "{v4_float = {0x0, 0x0, 0x0, 0x0}, v2_double = {0x0, 0x0}, v16_int8 = {0x0 &lt;repeats 16 times&gt;}, v8_int16 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int32 = {0x0, 0x0, 0x0, 0x0}, v2_int64 = {0x0, 0x0}, uint128 = 0x0}"
+        },
+        {
+          "number": "41",
+          "value": "{v4_float = {0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff}, v2_double = {0x7fffffffffffffff, 0x7fffffffffffffff}, v16_int8 = {0x65, 0x78, 0x61, 0x6d, 0x70, 0x6c, 0x65, 0x73, 0x2f, 0x63, 0x2f, 0x68, 0x65, 0x6c, 0x6c, 0x6f}, v8_int16 = {0x7865, 0x6d61, 0x6c70, 0x7365, 0x632f, 0x682f, 0x6c65, 0x6f6c}, v4_int32 = {0x6d617865, 0x73656c70, 0x682f632f, 0x6f6c6c65}, v2_int64 = {0x73656c706d617865, 0x6f6c6c65682f632f}, uint128 = 0x6f6c6c65682f632f73656c706d617865}"
+        },
+        {
+          "number": "42",
+          "value": "{v4_float = {0x0, 0x0, 0x0, 0x0}, v2_double = {0x0, 0x0}, v16_int8 = {0x0 <repeats 16 times>}, v8_int16 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int32 = {0x0, 0x0, 0x0, 0x0}, v2_int64 = {0x0, 0x0}, uint128 = 0x0}"
+        },
+        {
+          "number": "43",
+          "value": "{v4_float = {0x0, 0x0, 0x0, 0x0}, v2_double = {0x0, 0x0}, v16_int8 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0xff, 0x0, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, v8_int16 = {0x0, 0x0, 0x0, 0x0, 0xff, 0xff, 0x0, 0x0}, v4_int32 = {0x0, 0x0, 0xff00ff, 0x0}, v2_int64 = {0x0, 0xff00ff}, uint128 = 0xff00ff0000000000000000}"
+        },
+        {
+          "number": "44",
+          "value": "{v4_float = {0x0, 0x0, 0x0, 0x0}, v2_double = {0x0, 0x0}, v16_int8 = {0x2f <repeats 16 times>}, v8_int16 = {0x2f2f, 0x2f2f, 0x2f2f, 0x2f2f, 0x2f2f, 0x2f2f, 0x2f2f, 0x2f2f}, v4_int32 = {0x2f2f2f2f, 0x2f2f2f2f, 0x2f2f2f2f, 0x2f2f2f2f}, v2_int64 = {0x2f2f2f2f2f2f2f2f, 0x2f2f2f2f2f2f2f2f}, uint128 = 0x2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f}"
+        },
+        {
+          "number": "45",
+          "value": "{v4_float = {0x0, 0x0, 0x0, 0x0}, v2_double = {0x0, 0x0}, v16_int8 = {0x0 <repeats 16 times>}, v8_int16 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int32 = {0x0, 0x0, 0x0, 0x0}, v2_int64 = {0x0, 0x0}, uint128 = 0x0}"
+        },
+        {
+          "number": "46",
+          "value": "{v4_float = {0x0, 0x0, 0x0, 0x0}, v2_double = {0x0, 0x0}, v16_int8 = {0x0 <repeats 16 times>}, v8_int16 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int32 = {0x0, 0x0, 0x0, 0x0}, v2_int64 = {0x0, 0x0}, uint128 = 0x0}"
+        },
+        {
+          "number": "47",
+          "value": "{v4_float = {0x0, 0x0, 0x0, 0x0}, v2_double = {0x0, 0x0}, v16_int8 = {0x0 <repeats 16 times>}, v8_int16 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int32 = {0x0, 0x0, 0x0, 0x0}, v2_int64 = {0x0, 0x0}, uint128 = 0x0}"
+        },
+        {
+          "number": "48",
+          "value": "{v4_float = {0x0, 0x0, 0x0, 0x0}, v2_double = {0x0, 0x0}, v16_int8 = {0x0 <repeats 16 times>}, v8_int16 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int32 = {0x0, 0x0, 0x0, 0x0}, v2_int64 = {0x0, 0x0}, uint128 = 0x0}"
+        },
+        {
+          "number": "49",
+          "value": "{v4_float = {0x0, 0x0, 0x0, 0x0}, v2_double = {0x0, 0x0}, v16_int8 = {0x0 <repeats 16 times>}, v8_int16 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int32 = {0x0, 0x0, 0x0, 0x0}, v2_int64 = {0x0, 0x0}, uint128 = 0x0}"
+        },
+        {
+          "number": "50",
+          "value": "{v4_float = {0x0, 0x0, 0x0, 0x0}, v2_double = {0x0, 0x0}, v16_int8 = {0x0 <repeats 16 times>}, v8_int16 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int32 = {0x0, 0x0, 0x0, 0x0}, v2_int64 = {0x0, 0x0}, uint128 = 0x0}"
+        },
+        {
+          "number": "51",
+          "value": "{v4_float = {0x0, 0x0, 0x0, 0x0}, v2_double = {0x0, 0x0}, v16_int8 = {0x0 <repeats 16 times>}, v8_int16 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int32 = {0x0, 0x0, 0x0, 0x0}, v2_int64 = {0x0, 0x0}, uint128 = 0x0}"
+        },
+        {
+          "number": "52",
+          "value": "{v4_float = {0x0, 0x0, 0x0, 0x0}, v2_double = {0x0, 0x0}, v16_int8 = {0x0 <repeats 16 times>}, v8_int16 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int32 = {0x0, 0x0, 0x0, 0x0}, v2_int64 = {0x0, 0x0}, uint128 = 0x0}"
+        },
+        {
+          "number": "53",
+          "value": "{v4_float = {0x0, 0x0, 0x0, 0x0}, v2_double = {0x0, 0x0}, v16_int8 = {0x0 <repeats 16 times>}, v8_int16 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int32 = {0x0, 0x0, 0x0, 0x0}, v2_int64 = {0x0, 0x0}, uint128 = 0x0}"
+        },
+        {
+          "number": "54",
+          "value": "{v4_float = {0x0, 0x0, 0x0, 0x0}, v2_double = {0x0, 0x0}, v16_int8 = {0x0 <repeats 16 times>}, v8_int16 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int32 = {0x0, 0x0, 0x0, 0x0}, v2_int64 = {0x0, 0x0}, uint128 = 0x0}"
+        },
+        {
+          "number": "55",
+          "value": "{v4_float = {0x0, 0x0, 0x0, 0x0}, v2_double = {0x0, 0x0}, v16_int8 = {0x0 <repeats 16 times>}, v8_int16 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int32 = {0x0, 0x0, 0x0, 0x0}, v2_int64 = {0x0, 0x0}, uint128 = 0x0}"
+        },
+        {
+          "number": "56",
+          "value": "0x1f80"
+        },
+        {
+          "number": "57",
+          "value": "0x0"
+        },
+        {
+          "number": "58",
+          "value": "0x0"
+        },
+        {
+          "number": "59",
+          "value": "0x0"
+        },
+        {
+          "number": "60",
+          "value": "0x0"
+        },
+        {
+          "number": "61",
+          "value": "0x0"
+        },
+        {
+          "number": "62",
+          "value": "0x0"
+        },
+        {
+          "number": "63",
+          "value": "0x0"
+        },
+        {
+          "number": "64",
+          "value": "0x0"
+        },
+        {
+          "number": "65",
+          "value": "0x0"
+        },
+        {
+          "number": "66",
+          "value": "0x0"
+        },
+        {
+          "number": "67",
+          "value": "0x0"
+        },
+        {
+          "number": "68",
+          "value": "0x0"
+        },
+        {
+          "number": "69",
+          "value": "0x0"
+        },
+        {
+          "number": "70",
+          "value": "0x0"
+        },
+        {
+          "number": "71",
+          "value": "0x0"
+        },
+        {
+          "number": "72",
+          "value": "0x0"
+        },
+        {
+          "number": "73",
+          "value": "{lbound = 0x0, ubound_raw = 0x0}"
+        },
+        {
+          "number": "74",
+          "value": "{lbound = 0x0, ubound_raw = 0x0}"
+        },
+        {
+          "number": "75",
+          "value": "{lbound = 0x0, ubound_raw = 0x0}"
+        },
+        {
+          "number": "76",
+          "value": "{lbound = 0x0, ubound_raw = 0x0}"
+        },
+        {
+          "number": "77",
+          "value": "{raw = 0x0, config = {base = 0x0, reserved = 0x0, preserved = 0x0, enabled = 0x0}}"
+        },
+        {
+          "number": "78",
+          "value": "{raw = 0x0, status = {bde = 0x0, error = 0x0}}"
+        },
+        {
+          "number": "152",
+          "value": "0x7ffff7fe04c0"
+        },
+        {
+          "number": "153",
+          "value": "0x0"
+        },
+        {
+          "number": "154",
+          "value": "0xffffffffffffffff"
+        },
+        {
+          "number": "155",
+          "value": "0xf5"
+        },
+        {
+          "number": "156",
+          "value": "0x0"
+        },
+        {
+          "number": "157",
+          "value": "0xe0"
+        },
+        {
+          "number": "158",
+          "value": "0x8"
+        },
+        {
+          "number": "159",
+          "value": "0xd8"
+        },
+        {
+          "number": "160",
+          "value": "0x5"
+        },
+        {
+          "number": "161",
+          "value": "0xf0"
+        },
+        {
+          "number": "162",
+          "value": "0x90"
+        },
+        {
+          "number": "163",
+          "value": "0x80"
+        },
+        {
+          "number": "164",
+          "value": "0x80"
+        },
+        {
+          "number": "165",
+          "value": "0x2"
+        },
+        {
+          "number": "166",
+          "value": "0x7"
+        },
+        {
+          "number": "167",
+          "value": "0xd0"
+        },
+        {
+          "number": "168",
+          "value": "0xd0"
+        },
+        {
+          "number": "169",
+          "value": "0x0"
+        },
+        {
+          "number": "170",
+          "value": "0x0"
+        },
+        {
+          "number": "171",
+          "value": "0x46"
+        },
+        {
+          "number": "172",
+          "value": "0x0"
+        },
+        {
+          "number": "173",
+          "value": "0x47"
+        },
+        {
+          "number": "174",
+          "value": "0xe1"
+        },
+        {
+          "number": "175",
+          "value": "0x46f5"
+        },
+        {
+          "number": "176",
+          "value": "0x0"
+        },
+        {
+          "number": "177",
+          "value": "0x47e0"
+        },
+        {
+          "number": "178",
+          "value": "0xe108"
+        },
+        {
+          "number": "179",
+          "value": "0xe0d8"
+        },
+        {
+          "number": "180",
+          "value": "0x5"
+        },
+        {
+          "number": "181",
+          "value": "0xdff0"
+        },
+        {
+          "number": "183",
+          "value": "0xd80"
+        },
+        {
+          "number": "184",
+          "value": "0xd80"
+        },
+        {
+          "number": "185",
+          "value": "0x2"
+        },
+        {
+          "number": "186",
+          "value": "0x7"
+        },
+        {
+          "number": "187",
+          "value": "0x45d0"
+        },
+        {
+          "number": "188",
+          "value": "0xe0d0"
+        },
+        {
+          "number": "189",
+          "value": "0x0"
+        },
+        {
+          "number": "190",
+          "value": "0x0"
+        },
+        {
+          "number": "191",
+          "value": "0x555546f5"
+        },
+        {
+          "number": "192",
+          "value": "0x0"
+        },
+        {
+          "number": "193",
+          "value": "0x555547e0"
+        },
+        {
+          "number": "194",
+          "value": "0xffffe108"
+        },
+        {
+          "number": "195",
+          "value": "0xffffe0d8"
+        },
+        {
+          "number": "196",
+          "value": "0x5"
+        },
+        {
+          "number": "197",
+          "value": "0xffffdff0"
+        },
+        {
+          "number": "198",
+          "value": "0xffffdf90"
+        },
+        {
+          "number": "199",
+          "value": "0xf7dd0d80"
+        },
+        {
+          "number": "200",
+          "value": "0xf7dd0d80"
+        },
+        {
+          "number": "201",
+          "value": "0x2"
+        },
+        {
+          "number": "202",
+          "value": "0x7"
+        },
+        {
+          "number": "203",
+          "value": "0x555545d0"
+        },
+        {
+          "number": "204",
+          "value": "0xffffe0d0"
+        },
+        {
+          "number": "205",
+          "value": "0x0"
+        },
+        {
+          "number": "206",
+          "value": "0x0"
+        },
+        {
+          "number": "207",
+          "value": "{v8_float = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x0, 0x0, 0x0, 0x0}, v32_int8 = {0x0 <repeats 32 times>}, v16_int16 = {0x0 <repeats 16 times>}, v8_int32 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0x0, 0x0, 0x0, 0x0}, v2_int128 = {0x0, 0x0}}"
+        },
+        {
+          "number": "208",
+          "value": "{v8_float = {0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x7fffffffffffffff, 0x7fffffffffffffff, 0x0, 0x0}, v32_int8 = {0x65, 0x78, 0x61, 0x6d, 0x70, 0x6c, 0x65, 0x73, 0x2f, 0x63, 0x2f, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x0 <repeats 16 times>}, v16_int16 = {0x7865, 0x6d61, 0x6c70, 0x7365, 0x632f, 0x682f, 0x6c65, 0x6f6c, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v8_int32 = {0x6d617865, 0x73656c70, 0x682f632f, 0x6f6c6c65, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0x73656c706d617865, 0x6f6c6c65682f632f, 0x0, 0x0}, v2_int128 = {0x6f6c6c65682f632f73656c706d617865, 0x0}}"
+        },
+        {
+          "number": "209",
+          "value": "{v8_float = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x0, 0x0, 0x0, 0x0}, v32_int8 = {0x0 <repeats 32 times>}, v16_int16 = {0x0 <repeats 16 times>}, v8_int32 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0x0, 0x0, 0x0, 0x0}, v2_int128 = {0x0, 0x0}}"
+        },
+        {
+          "number": "210",
+          "value": "{v8_float = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x0, 0x0, 0x0, 0x0}, v32_int8 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0xff, 0x0, 0xff, 0x0 <repeats 21 times>}, v16_int16 = {0x0, 0x0, 0x0, 0x0, 0xff, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v8_int32 = {0x0, 0x0, 0xff00ff, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0x0, 0xff00ff, 0x0, 0x0}, v2_int128 = {0xff00ff0000000000000000, 0x0}}"
+        },
+        {
+          "number": "211",
+          "value": "{v8_float = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x0, 0x0, 0x0, 0x0}, v32_int8 = {0x2f <repeats 16 times>, 0x0 <repeats 16 times>}, v16_int16 = {0x2f2f, 0x2f2f, 0x2f2f, 0x2f2f, 0x2f2f, 0x2f2f, 0x2f2f, 0x2f2f, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v8_int32 = {0x2f2f2f2f, 0x2f2f2f2f, 0x2f2f2f2f, 0x2f2f2f2f, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0x2f2f2f2f2f2f2f2f, 0x2f2f2f2f2f2f2f2f, 0x0, 0x0}, v2_int128 = {0x2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f, 0x0}}"
+        },
+        {
+          "number": "212",
+          "value": "{v8_float = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x0, 0x0, 0x0, 0x0}, v32_int8 = {0x0 <repeats 32 times>}, v16_int16 = {0x0 <repeats 16 times>}, v8_int32 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0x0, 0x0, 0x0, 0x0}, v2_int128 = {0x0, 0x0}}"
+        },
+        {
+          "number": "213",
+          "value": "{v8_float = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x0, 0x0, 0x0, 0x0}, v32_int8 = {0x0 <repeats 32 times>}, v16_int16 = {0x0 <repeats 16 times>}, v8_int32 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0x0, 0x0, 0x0, 0x0}, v2_int128 = {0x0, 0x0}}"
+        },
+        {
+          "number": "214",
+          "value": "{v8_float = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x0, 0x0, 0x0, 0x0}, v32_int8 = {0x0 <repeats 32 times>}, v16_int16 = {0x0 <repeats 16 times>}, v8_int32 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0x0, 0x0, 0x0, 0x0}, v2_int128 = {0x0, 0x0}}"
+        },
+        {
+          "number": "215",
+          "value": "{v8_float = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x0, 0x0, 0x0, 0x0}, v32_int8 = {0x0 <repeats 32 times>}, v16_int16 = {0x0 <repeats 16 times>}, v8_int32 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0x0, 0x0, 0x0, 0x0}, v2_int128 = {0x0, 0x0}}"
+        },
+        {
+          "number": "216",
+          "value": "{v8_float = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x0, 0x0, 0x0, 0x0}, v32_int8 = {0x0 <repeats 32 times>}, v16_int16 = {0x0 <repeats 16 times>}, v8_int32 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0x0, 0x0, 0x0, 0x0}, v2_int128 = {0x0, 0x0}}"
+        },
+        {
+          "number": "217",
+          "value": "{v8_float = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x0, 0x0, 0x0, 0x0}, v32_int8 = {0x0 <repeats 32 times>}, v16_int16 = {0x0 <repeats 16 times>}, v8_int32 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0x0, 0x0, 0x0, 0x0}, v2_int128 = {0x0, 0x0}}"
+        },
+        {
+          "number": "218",
+          "value": "{v8_float = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x0, 0x0, 0x0, 0x0}, v32_int8 = {0x0 <repeats 32 times>}, v16_int16 = {0x0 <repeats 16 times>}, v8_int32 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0x0, 0x0, 0x0, 0x0}, v2_int128 = {0x0, 0x0}}"
+        },
+        {
+          "number": "219",
+          "value": "{v8_float = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x0, 0x0, 0x0, 0x0}, v32_int8 = {0x0 <repeats 32 times>}, v16_int16 = {0x0 <repeats 16 times>}, v8_int32 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0x0, 0x0, 0x0, 0x0}, v2_int128 = {0x0, 0x0}}"
+        },
+        {
+          "number": "220",
+          "value": "{v8_float = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x0, 0x0, 0x0, 0x0}, v32_int8 = {0x0 <repeats 32 times>}, v16_int16 = {0x0 <repeats 16 times>}, v8_int32 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0x0, 0x0, 0x0, 0x0}, v2_int128 = {0x0, 0x0}}"
+        },
+        {
+          "number": "221",
+          "value": "{v8_float = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x0, 0x0, 0x0, 0x0}, v32_int8 = {0x0 <repeats 32 times>}, v16_int16 = {0x0 <repeats 16 times>}, v8_int32 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0x0, 0x0, 0x0, 0x0}, v2_int128 = {0x0, 0x0}}"
+        },
+        {
+          "number": "222",
+          "value": "{v8_float = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x0, 0x0, 0x0, 0x0}, v32_int8 = {0x0 <repeats 32 times>}, v16_int16 = {0x0 <repeats 16 times>}, v8_int32 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0x0, 0x0, 0x0, 0x0}, v2_int128 = {0x0, 0x0}}"
+        },
+        {
+          "number": "223",
+          "value": "{lbound = 0x0, ubound = 0xffffffffffffffff} : size -1"
+        },
+        {
+          "number": "224",
+          "value": "{lbound = 0x0, ubound = 0xffffffffffffffff} : size -1"
+        },
+        {
+          "number": "225",
+          "value": "{lbound = 0x0, ubound = 0xffffffffffffffff} : size -1"
+        },
+        {
+          "number": "226",
+          "value": "{lbound = 0x0, ubound = 0xffffffffffffffff} : size -1"
+        }
+      ]
+    },
+    "token": 1,
+    "stream": "stdout"
+  },
+  {
+    "type": "result",
+    "message": "done",
+    "payload": {
+      "BreakpointTable": {
+        "nr_rows": "3",
+        "nr_cols": "6",
+        "hdr": [
+          {
+            "width": "7",
+            "alignment": "-1",
+            "col_name": "number",
+            "colhdr": "Num"
+          },
+          {
+            "width": "14",
+            "alignment": "-1",
+            "col_name": "type",
+            "colhdr": "Type"
+          },
+          {
+            "width": "4",
+            "alignment": "-1",
+            "col_name": "disp",
+            "colhdr": "Disp"
+          },
+          {
+            "width": "3",
+            "alignment": "-1",
+            "col_name": "enabled",
+            "colhdr": "Enb"
+          },
+          {
+            "width": "18",
+            "alignment": "-1",
+            "col_name": "addr",
+            "colhdr": "Address"
+          },
+          {
+            "width": "40",
+            "alignment": "2",
+            "col_name": "what",
+            "colhdr": "What"
+          }
+        ],
+        "body": [
+          {
+            "number": "1",
+            "type": "breakpoint",
+            "disp": "keep",
+            "enabled": "y",
+            "addr": "0x0000555555554704",
+            "func": "main",
+            "file": "hello.c",
+            "fullname": "/home/justin/hack/gdbgui/examples/c/hello.c",
+            "line": "32",
+            "thread-groups": [
+              "i1"
+            ],
+            "times": "1",
+            "original-location": "main"
+          },
+          {
+            "number": "2",
+            "type": "breakpoint",
+            "disp": "keep",
+            "enabled": "y",
+            "addr": "0x0000555555554704",
+            "func": "main",
+            "file": "hello.c",
+            "fullname": "/home/justin/hack/gdbgui/examples/c/hello.c",
+            "line": "32",
+            "thread-groups": [
+              "i1"
+            ],
+            "times": "1",
+            "original-location": "main"
+          },
+          {
+            "number": "3",
+            "type": "breakpoint",
+            "disp": "keep",
+            "enabled": "y",
+            "addr": "0x0000555555554704",
+            "func": "main",
+            "file": "hello.c",
+            "fullname": "/home/justin/hack/gdbgui/examples/c/hello.c",
+            "line": "32",
+            "thread-groups": [
+              "i1"
+            ],
+            "times": "1",
+            "original-location": "main"
+          }
+        ]
+      }
+    },
+    "token": null,
+    "stream": "stdout"
+  },
+  {
+    "type": "result",
+    "message": "done",
+    "payload": {
+      "stack": [
+        {
+          "level": "0",
+          "addr": "0x0000555555554704",
+          "func": "main",
+          "file": "hello.c",
+          "fullname": "/home/justin/hack/gdbgui/examples/c/hello.c",
+          "line": "32"
+        }
+      ]
+    },
+    "token": 1,
+    "stream": "stdout"
+  },
+  {
+    "type": "result",
+    "message": "running",
+    "payload": null,
+    "token": null,
+    "stream": "stdout"
+  },
+  {
+    "type": "notify",
+    "message": "running",
+    "payload": {
+      "thread-id": "all"
+    },
+    "token": null,
+    "stream": "stdout"
+  },
+  {
+    "type": "notify",
+    "message": "stopped",
+    "payload": {
+      "reason": "end-stepping-range",
+      "frame": {
+        "addr": "0x0000555555554710",
+        "func": "main",
+        "args": [
+          {
+            "name": "argc",
+            "value": "5"
+          },
+          {
+            "name": "argv",
+            "value": "0x7fffffffe0d8"
+          }
+        ],
+        "file": "hello.c",
+        "fullname": "/home/justin/hack/gdbgui/examples/c/hello.c",
+        "line": "34"
+      },
+      "thread-id": "1",
+      "stopped-threads": "all",
+      "core": "4"
+    },
+    "token": null,
+    "stream": "stdout"
+  },
+  {
+    "type": "result",
+    "message": "done",
+    "payload": {
+      "threads": [
+        {
+          "id": "1",
+          "target-id": "process 11950",
+          "name": "hello_c.a",
+          "frame": {
+            "level": "0",
+            "addr": "0x0000555555554710",
+            "func": "main",
+            "args": [
+              {
+                "name": "argc",
+                "value": "5"
+              },
+              {
+                "name": "argv",
+                "value": "0x7fffffffe0d8"
+              }
+            ],
+            "file": "hello.c",
+            "fullname": "/home/justin/hack/gdbgui/examples/c/hello.c",
+            "line": "34"
+          },
+          "state": "stopped",
+          "core": "4"
+        }
+      ],
+      "current-thread-id": "1"
+    },
+    "token": 1,
+    "stream": "stdout"
+  },
+  {
+    "type": "result",
+    "message": "done",
+    "payload": {
+      "variables": [
+        {
+          "name": "argc",
+          "arg": "1",
+          "type": "int",
+          "value": "5"
+        },
+        {
+          "name": "argv",
+          "arg": "1",
+          "type": "char **",
+          "value": "0x7fffffffe0d8"
+        },
+        {
+          "name": "retval",
+          "type": "int",
+          "value": "15775231"
+        },
+        {
+          "name": "s",
+          "type": "struct mystruct_t"
+        }
+      ]
+    },
+    "token": 1,
+    "stream": "stdout"
+  },
+  {
+    "type": "result",
+    "message": "done",
+    "payload": {
+      "changelist": []
+    },
+    "token": 1,
+    "stream": "stdout"
+  },
+  {
+    "type": "result",
+    "message": "done",
+    "payload": {
+      "register-values": [
+        {
+          "number": "0",
+          "value": "0xc"
+        },
+        {
+          "number": "1",
+          "value": "0x0"
+        },
+        {
+          "number": "2",
+          "value": "0x555555554873"
+        },
+        {
+          "number": "3",
+          "value": "0x7ffff7dd18c0"
+        },
+        {
+          "number": "4",
+          "value": "0x555555554868"
+        },
+        {
+          "number": "5",
+          "value": "0x7ffff7dd0760"
+        },
+        {
+          "number": "6",
+          "value": "0x7fffffffdff0"
+        },
+        {
+          "number": "7",
+          "value": "0x7fffffffdf90"
+        },
+        {
+          "number": "8",
+          "value": "0x0"
+        },
+        {
+          "number": "9",
+          "value": "0x0"
+        },
+        {
+          "number": "10",
+          "value": "0x555555756010"
+        },
+        {
+          "number": "11",
+          "value": "0x0"
+        },
+        {
+          "number": "12",
+          "value": "0x5555555545d0"
+        },
+        {
+          "number": "13",
+          "value": "0x7fffffffe0d0"
+        },
+        {
+          "number": "14",
+          "value": "0x0"
+        },
+        {
+          "number": "15",
+          "value": "0x0"
+        },
+        {
+          "number": "16",
+          "value": "0x555555554710"
+        },
+        {
+          "number": "17",
+          "value": "0x202"
+        },
+        {
+          "number": "18",
+          "value": "0x33"
+        },
+        {
+          "number": "19",
+          "value": "0x2b"
+        },
+        {
+          "number": "20",
+          "value": "0x0"
+        },
+        {
+          "number": "21",
+          "value": "0x0"
+        },
+        {
+          "number": "22",
+          "value": "0x0"
+        },
+        {
+          "number": "23",
+          "value": "0x0"
+        },
+        {
+          "number": "24",
+          "value": "0x0"
+        },
+        {
+          "number": "25",
+          "value": "0x0"
+        },
+        {
+          "number": "26",
+          "value": "0x0"
+        },
+        {
+          "number": "27",
+          "value": "0x0"
+        },
+        {
+          "number": "28",
+          "value": "0x0"
+        },
+        {
+          "number": "29",
+          "value": "0x0"
+        },
+        {
+          "number": "30",
+          "value": "0x0"
+        },
+        {
+          "number": "31",
+          "value": "0x0"
+        },
+        {
+          "number": "32",
+          "value": "0x10"
+        },
+        {
+          "number": "33",
+          "value": "0x0"
+        },
+        {
+          "number": "34",
+          "value": "0xaabf"
+        },
+        {
+          "number": "35",
+          "value": "0x7ffe"
+        },
+        {
+          "number": "36",
+          "value": "0xc1261567"
+        },
+        {
+          "number": "37",
+          "value": "0x55f8"
+        },
+        {
+          "number": "38",
+          "value": "0x0"
+        },
+        {
+          "number": "39",
+          "value": "0x0"
+        },
+        {
+          "number": "40",
+          "value": "{v4_float = {0x0, 0x0, 0x0, 0x0}, v2_double = {0x0, 0x0}, v16_int8 = {0x80, 0x4, 0xdd, 0xf7, 0xff, 0x7f, 0x0, 0x0, 0x80, 0x4, 0xdd, 0xf7, 0xff, 0x7f, 0x0, 0x0}, v8_int16 = {0x480, 0xf7dd, 0x7fff, 0x0, 0x480, 0xf7dd, 0x7fff, 0x0}, v4_int32 = {0xf7dd0480, 0x7fff, 0xf7dd0480, 0x7fff}, v2_int64 = {0x7ffff7dd0480, 0x7ffff7dd0480}, uint128 = 0x7ffff7dd048000007ffff7dd0480}"
+        },
+        {
+          "number": "41",
+          "value": "{v4_float = {0x0, 0x0, 0x0, 0x0}, v2_double = {0x0, 0x0}, v16_int8 = {0x40, 0x4, 0xdd, 0xf7, 0xff, 0x7f, 0x0, 0x0, 0x40, 0x4, 0xdd, 0xf7, 0xff, 0x7f, 0x0, 0x0}, v8_int16 = {0x440, 0xf7dd, 0x7fff, 0x0, 0x440, 0xf7dd, 0x7fff, 0x0}, v4_int32 = {0xf7dd0440, 0x7fff, 0xf7dd0440, 0x7fff}, v2_int64 = {0x7ffff7dd0440, 0x7ffff7dd0440}, uint128 = 0x7ffff7dd044000007ffff7dd0440}"
+        },
+        {
+          "number": "42",
+          "value": "{v4_float = {0x0, 0x0, 0x0, 0x0}, v2_double = {0x0, 0x0}, v16_int8 = {0x7d, 0x0, 0x0, 0x0, 0x7e, 0x0, 0x0, 0x0, 0x7f, 0x0, 0x0, 0x0, 0x80, 0x0, 0x0, 0x0}, v8_int16 = {0x7d, 0x0, 0x7e, 0x0, 0x7f, 0x0, 0x80, 0x0}, v4_int32 = {0x7d, 0x7e, 0x7f, 0x80}, v2_int64 = {0x7e0000007d, 0x800000007f}, uint128 = 0x800000007f0000007e0000007d}"
+        },
+        {
+          "number": "43",
+          "value": "{v4_float = {0x0, 0x0, 0x0, 0x0}, v2_double = {0x0, 0x0}, v16_int8 = {0x30, 0xfc, 0xdc, 0xf7, 0xff, 0x7f, 0x0, 0x0, 0x30, 0xfc, 0xdc, 0xf7, 0xff, 0x7f, 0x0, 0x0}, v8_int16 = {0xfc30, 0xf7dc, 0x7fff, 0x0, 0xfc30, 0xf7dc, 0x7fff, 0x0}, v4_int32 = {0xf7dcfc30, 0x7fff, 0xf7dcfc30, 0x7fff}, v2_int64 = {0x7ffff7dcfc30, 0x7ffff7dcfc30}, uint128 = 0x7ffff7dcfc3000007ffff7dcfc30}"
+        },
+        {
+          "number": "44",
+          "value": "{v4_float = {0x0, 0x0, 0x0, 0x0}, v2_double = {0x0, 0x0}, v16_int8 = {0xe, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0xe, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v8_int16 = {0xe, 0x0, 0x0, 0x0, 0xe, 0x0, 0x0, 0x0}, v4_int32 = {0xe, 0x0, 0xe, 0x0}, v2_int64 = {0xe, 0xe}, uint128 = 0xe000000000000000e}"
+        },
+        {
+          "number": "45",
+          "value": "{v4_float = {0x0, 0x0, 0x0, 0x0}, v2_double = {0x0, 0x0}, v16_int8 = {0x0 &lt;repeats 16 times&gt;}, v8_int16 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int32 = {0x0, 0x0, 0x0, 0x0}, v2_int64 = {0x0, 0x0}, uint128 = 0x0}"
+        },
+        {
+          "number": "46",
+          "value": "{v4_float = {0x0, 0x0, 0x0, 0x0}, v2_double = {0x8000000000000000, 0x8000000000000000}, v16_int8 = {0xff <repeats 16 times>}, v8_int16 = {0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff}, v4_int32 = {0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff}, v2_int64 = {0xffffffffffffffff, 0xffffffffffffffff}, uint128 = 0xffffffffffffffffffffffffffffffff}"
+        },
+        {
+          "number": "47",
+          "value": "{v4_float = {0x0, 0x0, 0x0, 0x0}, v2_double = {0x0, 0x0}, v16_int8 = {0x4, 0x0, 0x0, 0x0, 0x4, 0x0, 0x0, 0x0, 0x4, 0x0, 0x0, 0x0, 0x4, 0x0, 0x0, 0x0}, v8_int16 = {0x4, 0x0, 0x4, 0x0, 0x4, 0x0, 0x4, 0x0}, v4_int32 = {0x4, 0x4, 0x4, 0x4}, v2_int64 = {0x400000004, 0x400000004}, uint128 = 0x4000000040000000400000004}"
+        },
+        {
+          "number": "48",
+          "value": "{v4_float = {0x0, 0x0, 0x0, 0x0}, v2_double = {0x0, 0x0}, v16_int8 = {0x20, 0x4, 0xdd, 0xf7, 0xff, 0x7f, 0x0, 0x0, 0x20, 0x4, 0xdd, 0xf7, 0xff, 0x7f, 0x0, 0x0}, v8_int16 = {0x420, 0xf7dd, 0x7fff, 0x0, 0x420, 0xf7dd, 0x7fff, 0x0}, v4_int32 = {0xf7dd0420, 0x7fff, 0xf7dd0420, 0x7fff}, v2_int64 = {0x7ffff7dd0420, 0x7ffff7dd0420}, uint128 = 0x7ffff7dd042000007ffff7dd0420}"
+        },
+        {
+          "number": "49",
+          "value": "{v4_float = {0x0, 0x0, 0x0, 0x0}, v2_double = {0x0, 0x0}, v16_int8 = {0x0 <repeats 16 times>}, v8_int16 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int32 = {0x0, 0x0, 0x0, 0x0}, v2_int64 = {0x0, 0x0}, uint128 = 0x0}"
+        },
+        {
+          "number": "50",
+          "value": "{v4_float = {0x0, 0x0, 0x0, 0x0}, v2_double = {0x0, 0x0}, v16_int8 = {0x0 <repeats 16 times>}, v8_int16 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int32 = {0x0, 0x0, 0x0, 0x0}, v2_int64 = {0x0, 0x0}, uint128 = 0x0}"
+        },
+        {
+          "number": "51",
+          "value": "{v4_float = {0x0, 0x0, 0x0, 0x0}, v2_double = {0x0, 0x0}, v16_int8 = {0x0 <repeats 16 times>}, v8_int16 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int32 = {0x0, 0x0, 0x0, 0x0}, v2_int64 = {0x0, 0x0}, uint128 = 0x0}"
+        },
+        {
+          "number": "52",
+          "value": "{v4_float = {0x0, 0x0, 0x0, 0x0}, v2_double = {0x0, 0x0}, v16_int8 = {0x0 <repeats 16 times>}, v8_int16 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int32 = {0x0, 0x0, 0x0, 0x0}, v2_int64 = {0x0, 0x0}, uint128 = 0x0}"
+        },
+        {
+          "number": "53",
+          "value": "{v4_float = {0x0, 0x0, 0x0, 0x0}, v2_double = {0x0, 0x0}, v16_int8 = {0x0 <repeats 16 times>}, v8_int16 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int32 = {0x0, 0x0, 0x0, 0x0}, v2_int64 = {0x0, 0x0}, uint128 = 0x0}"
+        },
+        {
+          "number": "54",
+          "value": "{v4_float = {0x0, 0x0, 0x0, 0x0}, v2_double = {0x0, 0x0}, v16_int8 = {0x0 <repeats 16 times>}, v8_int16 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int32 = {0x0, 0x0, 0x0, 0x0}, v2_int64 = {0x0, 0x0}, uint128 = 0x0}"
+        },
+        {
+          "number": "55",
+          "value": "{v4_float = {0x0, 0x0, 0x0, 0x0}, v2_double = {0x0, 0x0}, v16_int8 = {0x0 <repeats 16 times>}, v8_int16 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int32 = {0x0, 0x0, 0x0, 0x0}, v2_int64 = {0x0, 0x0}, uint128 = 0x0}"
+        },
+        {
+          "number": "56",
+          "value": "0x1f80"
+        },
+        {
+          "number": "57",
+          "value": "0x0"
+        },
+        {
+          "number": "58",
+          "value": "0x0"
+        },
+        {
+          "number": "59",
+          "value": "0x0"
+        },
+        {
+          "number": "60",
+          "value": "0x0"
+        },
+        {
+          "number": "61",
+          "value": "0x0"
+        },
+        {
+          "number": "62",
+          "value": "0x0"
+        },
+        {
+          "number": "63",
+          "value": "0x0"
+        },
+        {
+          "number": "64",
+          "value": "0x0"
+        },
+        {
+          "number": "65",
+          "value": "0x0"
+        },
+        {
+          "number": "66",
+          "value": "0x0"
+        },
+        {
+          "number": "67",
+          "value": "0x0"
+        },
+        {
+          "number": "68",
+          "value": "0x0"
+        },
+        {
+          "number": "69",
+          "value": "0x0"
+        },
+        {
+          "number": "70",
+          "value": "0x0"
+        },
+        {
+          "number": "71",
+          "value": "0x0"
+        },
+        {
+          "number": "72",
+          "value": "0x0"
+        },
+        {
+          "number": "73",
+          "value": "{lbound = 0x0, ubound_raw = 0x0}"
+        },
+        {
+          "number": "74",
+          "value": "{lbound = 0x0, ubound_raw = 0x0}"
+        },
+        {
+          "number": "75",
+          "value": "{lbound = 0x0, ubound_raw = 0x0}"
+        },
+        {
+          "number": "76",
+          "value": "{lbound = 0x0, ubound_raw = 0x0}"
+        },
+        {
+          "number": "77",
+          "value": "{raw = 0x0, config = {base = 0x0, reserved = 0x0, preserved = 0x0, enabled = 0x0}}"
+        },
+        {
+          "number": "78",
+          "value": "{raw = 0x0, status = {bde = 0x0, error = 0x0}}"
+        },
+        {
+          "number": "152",
+          "value": "0x7ffff7fe04c0"
+        },
+        {
+          "number": "153",
+          "value": "0x0"
+        },
+        {
+          "number": "154",
+          "value": "0xffffffffffffffff"
+        },
+        {
+          "number": "155",
+          "value": "0xc"
+        },
+        {
+          "number": "156",
+          "value": "0x0"
+        },
+        {
+          "number": "157",
+          "value": "0x73"
+        },
+        {
+          "number": "158",
+          "value": "0xc0"
+        },
+        {
+          "number": "159",
+          "value": "0x68"
+        },
+        {
+          "number": "160",
+          "value": "0x60"
+        },
+        {
+          "number": "161",
+          "value": "0xf0"
+        },
+        {
+          "number": "162",
+          "value": "0x90"
+        },
+        {
+          "number": "163",
+          "value": "0x0"
+        },
+        {
+          "number": "164",
+          "value": "0x0"
+        },
+        {
+          "number": "165",
+          "value": "0x10"
+        },
+        {
+          "number": "166",
+          "value": "0x0"
+        },
+        {
+          "number": "167",
+          "value": "0xd0"
+        },
+        {
+          "number": "168",
+          "value": "0xd0"
+        },
+        {
+          "number": "169",
+          "value": "0x0"
+        },
+        {
+          "number": "170",
+          "value": "0x0"
+        },
+        {
+          "number": "171",
+          "value": "0x0"
+        },
+        {
+          "number": "172",
+          "value": "0x0"
+        },
+        {
+          "number": "173",
+          "value": "0x48"
+        },
+        {
+          "number": "174",
+          "value": "0x18"
+        },
+        {
+          "number": "175",
+          "value": "0xc"
+        },
+        {
+          "number": "176",
+          "value": "0x0"
+        },
+        {
+          "number": "177",
+          "value": "0x4873"
+        },
+        {
+          "number": "178",
+          "value": "0x18c0"
+        },
+        {
+          "number": "179",
+          "value": "0x4868"
+        },
+        {
+          "number": "180",
+          "value": "0x760"
+        },
+        {
+          "number": "181",
+          "value": "0xdff0"
+        },
+        {
+          "number": "183",
+          "value": "0x0"
+        },
+        {
+          "number": "184",
+          "value": "0x0"
+        },
+        {
+          "number": "185",
+          "value": "0x6010"
+        },
+        {
+          "number": "186",
+          "value": "0x0"
+        },
+        {
+          "number": "187",
+          "value": "0x45d0"
+        },
+        {
+          "number": "188",
+          "value": "0xe0d0"
+        },
+        {
+          "number": "189",
+          "value": "0x0"
+        },
+        {
+          "number": "190",
+          "value": "0x0"
+        },
+        {
+          "number": "191",
+          "value": "0xc"
+        },
+        {
+          "number": "192",
+          "value": "0x0"
+        },
+        {
+          "number": "193",
+          "value": "0x55554873"
+        },
+        {
+          "number": "194",
+          "value": "0xf7dd18c0"
+        },
+        {
+          "number": "195",
+          "value": "0x55554868"
+        },
+        {
+          "number": "196",
+          "value": "0xf7dd0760"
+        },
+        {
+          "number": "197",
+          "value": "0xffffdff0"
+        },
+        {
+          "number": "198",
+          "value": "0xffffdf90"
+        },
+        {
+          "number": "199",
+          "value": "0x0"
+        },
+        {
+          "number": "200",
+          "value": "0x0"
+        },
+        {
+          "number": "201",
+          "value": "0x55756010"
+        },
+        {
+          "number": "202",
+          "value": "0x0"
+        },
+        {
+          "number": "203",
+          "value": "0x555545d0"
+        },
+        {
+          "number": "204",
+          "value": "0xffffe0d0"
+        },
+        {
+          "number": "205",
+          "value": "0x0"
+        },
+        {
+          "number": "206",
+          "value": "0x0"
+        },
+        {
+          "number": "207",
+          "value": "{v8_float = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x0, 0x0, 0x0, 0x0}, v32_int8 = {0x80, 0x4, 0xdd, 0xf7, 0xff, 0x7f, 0x0, 0x0, 0x80, 0x4, 0xdd, 0xf7, 0xff, 0x7f, 0x0 <repeats 18 times>}, v16_int16 = {0x480, 0xf7dd, 0x7fff, 0x0, 0x480, 0xf7dd, 0x7fff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v8_int32 = {0xf7dd0480, 0x7fff, 0xf7dd0480, 0x7fff, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0x7ffff7dd0480, 0x7ffff7dd0480, 0x0, 0x0}, v2_int128 = {0x7ffff7dd048000007ffff7dd0480, 0x0}}"
+        },
+        {
+          "number": "208",
+          "value": "{v8_float = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x0, 0x0, 0x0, 0x0}, v32_int8 = {0x40, 0x4, 0xdd, 0xf7, 0xff, 0x7f, 0x0, 0x0, 0x40, 0x4, 0xdd, 0xf7, 0xff, 0x7f, 0x0 <repeats 18 times>}, v16_int16 = {0x440, 0xf7dd, 0x7fff, 0x0, 0x440, 0xf7dd, 0x7fff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v8_int32 = {0xf7dd0440, 0x7fff, 0xf7dd0440, 0x7fff, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0x7ffff7dd0440, 0x7ffff7dd0440, 0x0, 0x0}, v2_int128 = {0x7ffff7dd044000007ffff7dd0440, 0x0}}"
+        },
+        {
+          "number": "209",
+          "value": "{v8_float = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x0, 0x0, 0x0, 0x0}, v32_int8 = {0x7d, 0x0, 0x0, 0x0, 0x7e, 0x0, 0x0, 0x0, 0x7f, 0x0, 0x0, 0x0, 0x80, 0x0 <repeats 19 times>}, v16_int16 = {0x7d, 0x0, 0x7e, 0x0, 0x7f, 0x0, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v8_int32 = {0x7d, 0x7e, 0x7f, 0x80, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0x7e0000007d, 0x800000007f, 0x0, 0x0}, v2_int128 = {0x800000007f0000007e0000007d, 0x0}}"
+        },
+        {
+          "number": "210",
+          "value": "{v8_float = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x0, 0x0, 0x0, 0x0}, v32_int8 = {0x30, 0xfc, 0xdc, 0xf7, 0xff, 0x7f, 0x0, 0x0, 0x30, 0xfc, 0xdc, 0xf7, 0xff, 0x7f, 0x0 <repeats 18 times>}, v16_int16 = {0xfc30, 0xf7dc, 0x7fff, 0x0, 0xfc30, 0xf7dc, 0x7fff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v8_int32 = {0xf7dcfc30, 0x7fff, 0xf7dcfc30, 0x7fff, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0x7ffff7dcfc30, 0x7ffff7dcfc30, 0x0, 0x0}, v2_int128 = {0x7ffff7dcfc3000007ffff7dcfc30, 0x0}}"
+        },
+        {
+          "number": "211",
+          "value": "{v8_float = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x0, 0x0, 0x0, 0x0}, v32_int8 = {0xe, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0xe, 0x0 <repeats 23 times>}, v16_int16 = {0xe, 0x0, 0x0, 0x0, 0xe, 0x0 <repeats 11 times>}, v8_int32 = {0xe, 0x0, 0xe, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0xe, 0xe, 0x0, 0x0}, v2_int128 = {0xe000000000000000e, 0x0}}"
+        },
+        {
+          "number": "212",
+          "value": "{v8_float = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x0, 0x0, 0x0, 0x0}, v32_int8 = {0x0 <repeats 32 times>}, v16_int16 = {0x0 <repeats 16 times>}, v8_int32 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0x0, 0x0, 0x0, 0x0}, v2_int128 = {0x0, 0x0}}"
+        },
+        {
+          "number": "213",
+          "value": "{v8_float = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x8000000000000000, 0x8000000000000000, 0x0, 0x0}, v32_int8 = {0xff <repeats 16 times>, 0x0 <repeats 16 times>}, v16_int16 = {0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v8_int32 = {0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0xffffffffffffffff, 0xffffffffffffffff, 0x0, 0x0}, v2_int128 = {0xffffffffffffffffffffffffffffffff, 0x0}}"
+        },
+        {
+          "number": "214",
+          "value": "{v8_float = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x0, 0x0, 0x0, 0x0}, v32_int8 = {0x4, 0x0, 0x0, 0x0, 0x4, 0x0, 0x0, 0x0, 0x4, 0x0, 0x0, 0x0, 0x4, 0x0 <repeats 19 times>}, v16_int16 = {0x4, 0x0, 0x4, 0x0, 0x4, 0x0, 0x4, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v8_int32 = {0x4, 0x4, 0x4, 0x4, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0x400000004, 0x400000004, 0x0, 0x0}, v2_int128 = {0x4000000040000000400000004, 0x0}}"
+        },
+        {
+          "number": "215",
+          "value": "{v8_float = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x0, 0x0, 0x0, 0x0}, v32_int8 = {0x20, 0x4, 0xdd, 0xf7, 0xff, 0x7f, 0x0, 0x0, 0x20, 0x4, 0xdd, 0xf7, 0xff, 0x7f, 0x0 <repeats 18 times>}, v16_int16 = {0x420, 0xf7dd, 0x7fff, 0x0, 0x420, 0xf7dd, 0x7fff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v8_int32 = {0xf7dd0420, 0x7fff, 0xf7dd0420, 0x7fff, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0x7ffff7dd0420, 0x7ffff7dd0420, 0x0, 0x0}, v2_int128 = {0x7ffff7dd042000007ffff7dd0420, 0x0}}"
+        },
+        {
+          "number": "216",
+          "value": "{v8_float = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x0, 0x0, 0x0, 0x0}, v32_int8 = {0x0 <repeats 32 times>}, v16_int16 = {0x0 <repeats 16 times>}, v8_int32 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0x0, 0x0, 0x0, 0x0}, v2_int128 = {0x0, 0x0}}"
+        },
+        {
+          "number": "217",
+          "value": "{v8_float = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x0, 0x0, 0x0, 0x0}, v32_int8 = {0x0 <repeats 32 times>}, v16_int16 = {0x0 <repeats 16 times>}, v8_int32 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0x0, 0x0, 0x0, 0x0}, v2_int128 = {0x0, 0x0}}"
+        },
+        {
+          "number": "218",
+          "value": "{v8_float = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x0, 0x0, 0x0, 0x0}, v32_int8 = {0x0 <repeats 32 times>}, v16_int16 = {0x0 <repeats 16 times>}, v8_int32 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0x0, 0x0, 0x0, 0x0}, v2_int128 = {0x0, 0x0}}"
+        },
+        {
+          "number": "219",
+          "value": "{v8_float = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x0, 0x0, 0x0, 0x0}, v32_int8 = {0x0 <repeats 32 times>}, v16_int16 = {0x0 <repeats 16 times>}, v8_int32 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0x0, 0x0, 0x0, 0x0}, v2_int128 = {0x0, 0x0}}"
+        },
+        {
+          "number": "220",
+          "value": "{v8_float = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x0, 0x0, 0x0, 0x0}, v32_int8 = {0x0 <repeats 32 times>}, v16_int16 = {0x0 <repeats 16 times>}, v8_int32 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0x0, 0x0, 0x0, 0x0}, v2_int128 = {0x0, 0x0}}"
+        },
+        {
+          "number": "221",
+          "value": "{v8_float = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x0, 0x0, 0x0, 0x0}, v32_int8 = {0x0 <repeats 32 times>}, v16_int16 = {0x0 <repeats 16 times>}, v8_int32 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0x0, 0x0, 0x0, 0x0}, v2_int128 = {0x0, 0x0}}"
+        },
+        {
+          "number": "222",
+          "value": "{v8_float = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_double = {0x0, 0x0, 0x0, 0x0}, v32_int8 = {0x0 <repeats 32 times>}, v16_int16 = {0x0 <repeats 16 times>}, v8_int32 = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, v4_int64 = {0x0, 0x0, 0x0, 0x0}, v2_int128 = {0x0, 0x0}}"
+        },
+        {
+          "number": "223",
+          "value": "{lbound = 0x0, ubound = 0xffffffffffffffff} : size -1"
+        },
+        {
+          "number": "224",
+          "value": "{lbound = 0x0, ubound = 0xffffffffffffffff} : size -1"
+        },
+        {
+          "number": "225",
+          "value": "{lbound = 0x0, ubound = 0xffffffffffffffff} : size -1"
+        },
+        {
+          "number": "226",
+          "value": "{lbound = 0x0, ubound = 0xffffffffffffffff} : size -1"
+        }
+      ]
+    },
+    "token": 1,
+    "stream": "stdout"
+  },
+  {
+    "type": "result",
+    "message": "done",
+    "payload": {
+      "BreakpointTable": {
+        "nr_rows": "3",
+        "nr_cols": "6",
+        "hdr": [
+          {
+            "width": "7",
+            "alignment": "-1",
+            "col_name": "number",
+            "colhdr": "Num"
+          },
+          {
+            "width": "14",
+            "alignment": "-1",
+            "col_name": "type",
+            "colhdr": "Type"
+          },
+          {
+            "width": "4",
+            "alignment": "-1",
+            "col_name": "disp",
+            "colhdr": "Disp"
+          },
+          {
+            "width": "3",
+            "alignment": "-1",
+            "col_name": "enabled",
+            "colhdr": "Enb"
+          },
+          {
+            "width": "18",
+            "alignment": "-1",
+            "col_name": "addr",
+            "colhdr": "Address"
+          },
+          {
+            "width": "40",
+            "alignment": "2",
+            "col_name": "what",
+            "colhdr": "What"
+          }
+        ],
+        "body": [
+          {
+            "number": "1",
+            "type": "breakpoint",
+            "disp": "keep",
+            "enabled": "y",
+            "addr": "0x0000555555554704",
+            "func": "main",
+            "file": "hello.c",
+            "fullname": "/home/justin/hack/gdbgui/examples/c/hello.c",
+            "line": "32",
+            "thread-groups": [
+              "i1"
+            ],
+            "times": "1",
+            "original-location": "main"
+          },
+          {
+            "number": "2",
+            "type": "breakpoint",
+            "disp": "keep",
+            "enabled": "y",
+            "addr": "0x0000555555554704",
+            "func": "main",
+            "file": "hello.c",
+            "fullname": "/home/justin/hack/gdbgui/examples/c/hello.c",
+            "line": "32",
+            "thread-groups": [
+              "i1"
+            ],
+            "times": "1",
+            "original-location": "main"
+          },
+          {
+            "number": "3",
+            "type": "breakpoint",
+            "disp": "keep",
+            "enabled": "y",
+            "addr": "0x0000555555554704",
+            "func": "main",
+            "file": "hello.c",
+            "fullname": "/home/justin/hack/gdbgui/examples/c/hello.c",
+            "line": "32",
+            "thread-groups": [
+              "i1"
+            ],
+            "times": "1",
+            "original-location": "main"
+          }
+        ]
+      }
+    },
+    "token": null,
+    "stream": "stdout"
+  },
+  {
+    "type": "result",
+    "message": "done",
+    "payload": {
+      "stack": [
+        {
+          "level": "0",
+          "addr": "0x0000555555554710",
+          "func": "main",
+          "file": "hello.c",
+          "fullname": "/home/justin/hack/gdbgui/examples/c/hello.c",
+          "line": "34"
+        }
+      ]
+    },
+    "token": 1,
+    "stream": "stdout"
+  }
+]

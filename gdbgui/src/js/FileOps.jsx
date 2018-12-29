@@ -1,4 +1,3 @@
-/* global debug */
 import { store } from "statorgfc";
 import GdbApi from "./GdbApi.jsx";
 import constants from "./constants.js";
@@ -6,12 +5,9 @@ import Actions from "./Actions.js";
 // eslint-disable-next-line
 import React from "react";
 
-let debug_print;
-try {
-  debug_print = debug ? console.info : _.noop
-} catch (e) {
-  debug_print = _.noop
-}
+import debug from 'debug'
+const l = debug('gdbgui:gdbapi')
+debug.enabled('gdbgui:*')
 
 let FileFetcher = {
   _is_fetching: false,
@@ -116,7 +112,7 @@ let FileFetcher = {
     }
 
     if (FileOps.lines_are_cached(fullname, start_line, end_line)) {
-      debug_print(
+      l(
         `not fetching ${fullname}:${start_line}:${end_line} because it's cached`
       );
       return;

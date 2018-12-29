@@ -3,17 +3,21 @@
     . v/bin/activate
     python -m gdbgui --debug
     BABEL_ENV=development ./node_modules/.bin/webpack --mode development --watch --config webpack.config.js
-    
+
 # todo
-1. source code cannot be scrolled (on some browsers? gemini?)
-1. right sidebar cannot be scrolled (on some browsers? gemini?)
+1. npm install react-custom-scrollbars? it's installed
 1. panels cannot be resized (can this be solved with PanelGroup?)
-1. Copy button next to variable should provide feedback
-1. tree icon does not display tree (huh? no idea what this means)
 1. run yarn prettier to autoformat javascript code
 1. run black to autoformat python code
-1. weird visual artifact in threads when args are present in frames
 1. figure out why `import . ` fails when passing --debug to `python -m gdbgui --debug`
+1. tree icon does not display tree (huh? no idea what this means)
+   oh, i guess i reproduced this. if the panel is collapsed, the tree doesn't show
+1. source code cannot be scrolled (on some browsers? gemini?)
+1. right sidebar cannot be scrolled (on some browsers? gemini?)
+1. gemini scrollbars require resize 
+
+# existing bugs
+1. weird visual artifact in threads when args are present in frames
 
 # todo nicities
 1. do tooltips the bootstrap way
@@ -34,6 +38,7 @@
 
 # fixed
 1. re-layout the whole gui top-to-bottom, bootstrap it!
+1. Copy button next to variable should provide feedback
 1. panels on right have unintuitive behavior, 
    including using buttons to toggle visibility of various panels
 1. the dashboard template is busted after the bootstrap 4 update

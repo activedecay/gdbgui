@@ -8,6 +8,11 @@ html {
   overflow: hidden;
 }
 
+#gdbgui-application,
+.application-container {
+  height: 100vh;
+}
+
 #right-sidebar {
   height: calc(100vh - 179px - 79.38px);
 }
@@ -87,4 +92,9 @@ html {
     color: $console-command-prompt-text;
     background-color: $console-command-prompt-bg;
   }
+}
+
+.tree-container, .vis-network {
+  min-width: 300px;
+  min-height: 200px;
 }

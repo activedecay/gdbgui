@@ -1,5 +1,5 @@
 /* global initial_data */
-/* global debug */
+/* global debug_enabled */
 import constants from "./constants.js";
 import Util from './Util'
 
@@ -10,7 +10,6 @@ import Util from './Util'
  */
 const initial_store_data = {
   // environment
-  debug: debug, // if gdbgui is run in debug mode
   interpreter: initial_data.interpreter, // either 'gdb' or 'llvm'
   gdbgui_version: initial_data.gdbgui_version,
   latest_gdbgui_version: "(not fetched)",
@@ -31,6 +30,7 @@ const initial_store_data = {
     registers: false,
     debug: false,
   },
+  tree_section_visibility_changed: false,
 
   debug_in_reverse: false,
   show_modal: false,
@@ -52,7 +52,7 @@ const initial_store_data = {
 
   pretty_print: true, // whether gdb should "pretty print" variables. There is an option for this in Settings
   refresh_state_after_sending_console_command: true, // If true, send commands to refresh GUI store after each command is sent from console
-  show_all_sent_commands_in_console: debug, // show all sent commands if in debug mode
+  show_all_sent_commands_in_console: debug_enabled, // show all sent commands if in debug mode
 
   inferior_program: constants.inferior_states.unknown,
   inferior_pid: null,

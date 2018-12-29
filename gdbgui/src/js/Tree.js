@@ -2,7 +2,7 @@
 // utilizes the amazing http://visjs.org library
 
 /* global vis */
-import { store } from "statorgfc";
+import {store} from "statorgfc";
 import GdbVariable from "./GdbVariable.jsx";
 import constants from "./constants.js";
 
@@ -12,7 +12,10 @@ const Tree = {
   height_input: null,
   init: function() {
     store.subscribeToKeys(
-      ["root_gdb_tree_var", "expressions", "root_gdb_tree_var"],
+      [
+        "root_gdb_tree_var",
+        "expressions",
+      ],
       Tree._render
     );
     let render_on_enter = e => {
@@ -35,19 +38,14 @@ const Tree = {
     let gdbvar = store.get("root_gdb_tree_var");
     if (!gdbvar) {
       Tree.el.innerHTML = `<span class='small text-info'>
-        Create an expression and click the <span class='fa fa-seedling'/> button
-      </span>`;
+        Create an expression and click the <span class='fa fa-seedling text-success'/></span> button`;
       return;
     }
 
     let expressions = store.get("expressions"),
-      gdb_root_var_to_update = Tree.gdb_var_being_updated
-        ? Tree.gdb_var_being_updated
-        : gdbvar,
-      gdb_var_obj = GdbVariable.get_obj_from_gdb_var_name(
-        expressions,
-        gdb_root_var_to_update
-      );
+      gdb_root_var_to_update = Tree.gdb_var_being_updated ? Tree.gdb_var_being_updated
+        /* otherwise */: gdbvar,
+      gdb_var_obj = GdbVariable.get_obj_from_gdb_var_name(expressions, gdb_root_var_to_update);
 
     if (!gdb_var_obj) {
       // couldn't find this variable name in our list of variables. Probably was a local variable the

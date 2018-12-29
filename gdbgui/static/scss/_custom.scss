@@ -72,8 +72,12 @@ select.custom-select.md-grow,
   background-color: $gray-900;
 }
 
+.popover.bg-success > .arrow-bottom::after {
+  border-bottom-color: $success;
+}
+
 /* customizes animate css */
-@import "~animate.css/animate.min.css";
+@import "~animate.css/animate.min.css"; /* todo why is this used? */
 
 @import '~gemini-scrollbar/gemini-scrollbar.css';
 
@@ -100,4 +104,14 @@ select.custom-select.md-grow,
 .gm-scrollbar .thumb:hover,
 .gm-scrollbar .thumb:active {
   background-color: $gray-600;
+}
+
+/* customizes dan's panelgroup */
+
+.divider-border {
+  background-color: $gray-700;
+}
+
+.panel-group {
+  width: 100%;
 }

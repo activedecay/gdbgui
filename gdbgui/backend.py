@@ -553,7 +553,7 @@ def gdbgui():
     return render_template(
         "gdbgui.html",
         version=__version__,
-        debug=app.debug,
+        debug_enabled=app.debug,
         interpreter=interpreter,
         initial_data=initial_data,
         themes=THEMES,

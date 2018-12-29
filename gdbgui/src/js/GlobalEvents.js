@@ -41,7 +41,6 @@ const GlobalEvents = {
         GdbApi.click_return_button();
       } else if (char === "l") {
         let past_binaries = _.uniq(JSON.parse(localStorage.getItem("past_binaries")));
-        console.info(past_binaries)
         Actions.set_gdb_binary_and_arguments(past_binaries[0])
       } else if (char === "r") {
         GdbApi.click_run_button();
