@@ -1,5 +1,5 @@
 import React from "react";
-import { store } from "statorgfc";
+import {store} from "statorgfc";
 import GdbVariable from "./GdbVariable.jsx";
 import constants from "./constants.js";
 
@@ -42,7 +42,7 @@ class Expressions extends React.Component {
       );
     }
     content.push(
-      <div key="tt" id="plot_coordinate_tooltip" style={{ display: "hidden" }} />
+      <div key="tt" id="plot_coordinate_tooltip" style={{ display: "hidden" }}/>
     );
 
     return (
@@ -51,14 +51,17 @@ class Expressions extends React.Component {
           <li className="nav-item">
             <div className='input-group input-group-sm'>
               <div className='input-group-prepend'>
-                <button className='btn btn-success'>
+                <button
+                  onClick={this.onclick_create.bind(this)}
+                  className='btn btn-success'>
                   Create
                 </button>
               </div>
               <input
+                ref={el => this.expression_input = el}
                 className="form-control"
                 placeholder='a variable or expression'
-                onKeyUp={Expressions.keydown_on_input}
+                onKeyUp={this.keydown_on_input.bind(this)}
               />
             </div>
           </li>
@@ -69,13 +72,23 @@ class Expressions extends React.Component {
       </React.Fragment>
     );
   }
+
   componentDidUpdate() {
     for (let obj of this.objs_to_render) {
       GdbVariable.plot_var_and_children(obj);
     }
   }
 
-  static keydown_on_input(e) {
+  onclick_create() {
+    console.info('what')
+    let trimmed_expr = _.trim(this.expression_input.value);
+
+    if (trimmed_expr !== "") {
+      GdbVariable.create_variable(trimmed_expr, "expr");
+    }
+  }
+
+  keydown_on_input(e) {
     if (e.keyCode === constants.ENTER_BUTTON_NUM) {
       let expr = e.currentTarget.value,
         trimmed_expr = _.trim(expr);

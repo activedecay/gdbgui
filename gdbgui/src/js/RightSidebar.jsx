@@ -36,11 +36,26 @@ let onmousemove_in_parent_callback = function (e) {
 class RightSidebar extends React.Component {
   constructor() {
     super()
-    store.connectComponentState(this, ["show_filesystem", "section_is_visible"]);
+    store.connectComponentState(this,
+      [
+        "show_filesystem",
+        "section_is_visible",
+        "root_gdb_tree_var",
+      ]
+    );
+    this.current_tree_var = this.state["root_gdb_tree_var"]
+  }
+
+  componentWillUpdate() {
   }
 
   render() {
     const section_is_visible = this.state.section_is_visible
+    if (this.current_tree_var !== this.state["root_gdb_tree_var"]) {
+      store.set('section_is_visible', { ...section_is_visible, tree: true });
+      store.set('tree_section_visibility_changed', true);
+    }
+    this.current_tree_var = this.state["root_gdb_tree_var"]
     return (
       <div id='right-sidebar'
            className={`col-${this.state.show_filesystem ? 4 : 6}`}

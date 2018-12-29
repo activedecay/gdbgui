@@ -298,8 +298,9 @@ class GdbVariable extends React.Component {
             {has_children && (expr_type === "expr" || expr_type === "local") ?
               <button
                 className='btn btn-tiny'
+                title='Update view in tree panel'
                 onClick={() => GdbVariable.click_draw_tree_gdb_variable(mi_obj.name)}>
-                <span className='fa fa-seedling'/>
+                <span className='fa fa-seedling text-success'/>
               </button> : null}
             {mi_obj.can_plot ?
               <button className='btn btn-tiny'
@@ -312,7 +313,7 @@ class GdbVariable extends React.Component {
                 className='btn btn-tiny'
                 title='Clear expansion'
                 onClick={() => GdbVariable.delete_gdb_variable(mi_obj.name)}>
-                <span className="fa fa-ban"/>
+                <span className="fa fa-ban text-danger"/>
               </button>
               /* otherwise */ : null}
           </span>

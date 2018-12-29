@@ -88,3 +88,8 @@ html {
     background-color: $console-command-prompt-bg;
   }
 }
+
+.tree-container, .vis-network {
+  min-width: 300px;
+  min-height: 200px;
+}

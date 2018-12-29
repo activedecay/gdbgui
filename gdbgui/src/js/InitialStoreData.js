@@ -31,6 +31,7 @@ const initial_store_data = {
     registers: false,
     debug: false,
   },
+  tree_section_visibility_changed: false,
 
   debug_in_reverse: false,
   show_modal: false,

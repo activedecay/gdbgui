@@ -2,10 +2,17 @@ import React from "react";
 import { store } from "statorgfc";
 
 class CopyToClipboard extends React.Component {
+  componentDidMount() {
+    $('[data-toggle="popover"]').popover({
+      trigger: 'focus',delay: { "show": 0, "hide": 300 }
+    })
+  }
+
   render() {
     if (!this.props.content) {
       return null;
     }
+
     return (
       <button
         className='btn btn-tiny'
@@ -19,7 +26,13 @@ class CopyToClipboard extends React.Component {
           textarea.select();
           document.execCommand("copy") || console.error('failed to copy');
         }}>
-        <span className='fa fa-copy'/>
+        <a tabIndex="0"
+           role="button"
+           data-toggle="popover"
+           data-content="Copied!"
+           data-trigger="focus">
+          <span className='fa fa-copy text-info'/>
+        </a>
       </button>
     );
   }
