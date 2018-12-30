@@ -102,7 +102,7 @@ class Gdbgui extends React.Component {
                         spacing={4}>
               <FoldersView/>
               <MiddleLeft/>
-              <RightSidebar signals={initial_data.signals} debug={debug}/>
+              <RightSidebar signals={initial_data.signals} debug={debug_enabled}/>
             </PanelGroup>
             <GdbConsoleContainer/>
           </PanelGroup>

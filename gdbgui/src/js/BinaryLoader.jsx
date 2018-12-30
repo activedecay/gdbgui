@@ -3,6 +3,8 @@ import constants from "./constants.js";
 import Actions from "./Actions.js";
 import ToolTipTourguide from "./ToolTipTourguide.jsx";
 import {step1, step2} from "./TourGuide.jsx";
+import debug from 'debug'
+const info = debug('gdbgui:BinaryLoader:info')
 
 const TARGET_TYPES = {
   file: "file",
@@ -107,7 +109,8 @@ class BinaryLoader extends React.Component {
           </select>
           <input
             type="text"
-            className="form-control"
+            className="form-control main-form-input"
+            title='Focus this input control with (/)'
             placeholder={placeholder}
             list="past_binaries"
             onKeyUp={this.onkeyup_user_input.bind(this)}
@@ -175,7 +178,8 @@ class BinaryLoader extends React.Component {
 
     let num_gdbgui_sessions = parseInt(localStorage.getItem("num_gdbgui_sessions"));
     if (isNaN(num_gdbgui_sessions)) {
-      num_gdbgui_sessions = 0;
+      num_gdbgui_sessions = 0
+      info('note, number of gdbgui sessions is %d', num_gdbgui_sessions)
     }
   }
 

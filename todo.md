@@ -1,44 +1,48 @@
-# to get this thing to work
-
-    . v/bin/activate
-    python -m gdbgui --debug
-    BABEL_ENV=development ./node_modules/.bin/webpack --mode development --watch --config webpack.config.js
-
 # todo
-1. do all tooltips the bootstrap way or else use title
-1. npm install react-custom-scrollbars? it's installed
-1. figure out why `import . ` fails when passing --debug to `python -m gdbgui --debug`
+1. weed out bugs in other use cases
 
 # existing bugs
-1. weird visual artifact in threads when args are present in frames
+1. weird visual artifact in threads when args are present 
+   in frames
 1. determine if hidden trees don't show up in origin
+1. figure out why `import . ` fails when passing --debug to 
+   `python -m gdbgui --debug`
 
 # todo nicities
+1. npm install react-custom-scrollbars? it's installed
+1. hot reloading
 1. remove jquery from code panel scrolling
 1. panels should remember their sizes between refreshes
-1. side panel scrolls annoyingly during use 
-  (it's the memory or registers tables. 
-   refactor to use react and state.)
+1. side panel scrolls annoyingly during use (it's the 
+   memory or registers tables. refactor to use react and 
+   state.)
 1. hovervar action that adds expression automatically
-1. new setting for memory width in bytes (8, but could be nicer as 16)
-1. new settings to remember memory distance from selected address
+1. new setting for memory width in bytes (8, but could be 
+   nicer as 16)
+1. new settings to remember memory distance from selected 
+   address
 1. make load binary understand file:/// scheme uris
-1. tree thing needs his own window he's annoying as shit to work with
+1. tree thing needs his own window he's annoying as shit to 
+   work with
 1. register_table_data is 10000 lines long; allow filtering
-1. / keymaps to focus load binary input
-1. ; keymaps to focus gdb command input 
-1. f keymaps to fetch disass -- or do it automatically and as setting? hmm?
-1. stylize white input backgrounds
-1. asm doesn't switch from at&t to intel until you click twice
+1. asm doesn't switch from at&t to intel until you click 
+   twice
 
 # fixed
 1. re-layout the whole gui top-to-bottom, bootstrap it!
-1. automatically scroll containers(console, debugging window)
-1. panels cannot be resized (can this be solved with PanelGroup, yes it can)
+1. f keymaps to fetch disassembly
+1. / keymaps to focus load binary input
+1. ; keymaps to focus gdb command input
+1. do all tooltips the bootstrap way or else use title
+1. automatically scroll containers(console, debugging 
+   window)
+1. panels cannot be resized (can this be solved with 
+   PanelGroup, yes it can)
 1. Copy button next to variable should provide feedback
-1. panels on right have unintuitive behavior, 
-   including using buttons to toggle visibility of various panels
-1. the dashboard template is busted after the bootstrap 4 update
+1. panels on right have unintuitive behavior, including 
+using buttons to toggle visibility of various panels
+1. the dashboard template is busted after the bootstrap 4 
+   update
 1. hovervar is busted after bootstrap 4 update
 1. fix scrolling in code window and in gdb console
 1. remember collapse state of right sidebar collapse-ers
@@ -70,3 +74,10 @@
 1. filesystem picker collapses when text is clicked
 1. moved settings into menu
 1. load last binary shortcut
+
+# to get this thing to work
+
+    . v/bin/activate
+    python -m gdbgui --debug
+    BABEL_ENV=development ./node_modules/.bin/webpack \
+      --mode development --watch --config webpack.config.js

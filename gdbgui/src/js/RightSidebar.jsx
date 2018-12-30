@@ -1,7 +1,3 @@
-/**
- * A component to show/hide variable exploration when hovering over a variable
- * in the source code
- */
 import {store} from "statorgfc";
 import React from "react";
 

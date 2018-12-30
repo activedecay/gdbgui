@@ -10,8 +10,10 @@ import GdbApi from "./GdbApi.jsx";
 import Actions from "./Actions.js";
 import constants from "./constants.js";
 import {step0, step3} from "./TourGuide.jsx";
-
 import Settings from "./Settings.jsx";
+import debug from 'debug'
+const info = debug('gdbgui:TopBar:info')
+// debug.enable('gdbgui:TopBar:info')
 
 let onkeyup_jump_to_line = e => {
   if (e.keyCode === constants.ENTER_BUTTON_NUM) {
@@ -205,7 +207,7 @@ class TopBar extends React.Component {
       this._clear_spinner_timeout();
       this.setState({ show_spinner: false });
       if (this.state.waiting_for_response === true) {
-        // false to true
+        info('spinner false to true')
         this._set_spinner_timeout();
       }
     }
