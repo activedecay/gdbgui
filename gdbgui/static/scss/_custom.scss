@@ -79,37 +79,13 @@ select.custom-select.md-grow,
 /* customizes animate css */
 @import "~animate.css/animate.min.css"; /* todo why is this used? */
 
-@import '~gemini-scrollbar/gemini-scrollbar.css';
-
-.gm-scrollbar.-vertical {
-  top: 0;
-  right: 0;
-  bottom: 0;
-}
-.gm-scrollbar.-horizontal {
-  left: 0;
-  right: 5px;
-  bottom: 0;
-}
-
-.gm-scrollbar.-vertical,
-.gm-scrollbar.-horizontal {
-  background: $gray-900;
-}
-
-.gm-scrollbar.-vertical > .thumb {
-  background-color: $gray-700;
-}
-
-.gm-scrollbar .thumb:hover,
-.gm-scrollbar .thumb:active {
-  background-color: $gray-600;
-}
-
 /* customizes dan's panelgroup */
 
 .divider-border {
   background-color: $gray-700;
+  &.dragging {
+    background-color: $gray-600;
+  }
 }
 
 .panel-group {

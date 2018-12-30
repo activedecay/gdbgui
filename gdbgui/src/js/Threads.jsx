@@ -5,11 +5,10 @@ import GdbApi from "./GdbApi.jsx";
 import Memory from "./Memory.jsx";
 import {FileLink} from "./Links.jsx";
 import MemoryLink from "./MemoryLink.jsx";
-import debug from 'debug'
 
-const l = debug('hello:lasagna')
-debug.enable('hello:*')
-l('what!@')
+import debug from 'debug'
+const info = debug('gdbgui:Threads:info')
+
 
 class FrameArguments extends React.Component {
   render_frame_arg(frame_arg) {
@@ -17,7 +16,7 @@ class FrameArguments extends React.Component {
   }
 
   render() {
-    l(this.props.args, 'what')
+    info(this.props.args, 'what')
     let frame_args = this.props.args;
     if (!this.props.args) {
       frame_args = [];
@@ -88,7 +87,7 @@ class Threads extends React.Component {
   }
 
   static get_stack_for_thread(cur_frame, stack_data, is_current_thread_being_rendered) {
-    l(`fuckin %O %O`, cur_frame, stack_data)
+    info(`fuckin %O %O`, cur_frame, stack_data)
     // each thread provides only the frame that it's paused on (cur_frame).
     // we also have the output of `-stack-list-frames` (stack_data), which
     // is the full stack of the selected thread
@@ -170,7 +169,7 @@ class Threads extends React.Component {
       title = `click to select this thead (thread id ${thread_id})`;
     }
     let key = thread_id + frame_num;
-    l(`here lies %O`, {frame})
+    info(`here lies %O`, {frame})
 
     return [
       <span key={key} title={title} className={classes.join(" ")} onClick={onclick}>

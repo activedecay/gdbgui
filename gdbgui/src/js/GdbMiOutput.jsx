@@ -8,20 +8,30 @@
  */
 import React from "react";
 import {store} from "statorgfc";
+import debug from 'debug'
+
+const info = debug('gdbgui:GdbMiOutput:info')
 
 class GdbMiOutput extends React.Component {
   static MAX_OUTPUT_ENTRIES = 500;
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     store.connectComponentState(this, ["gdb_mi_output"]);
-    // this._debounced_scroll_to_bottom = _.debounce(  // note this is annoying
-    //   this._scroll_to_bottom.bind(this),
-    //   300,
-    //   {
-    //     leading: true
-    //   }
-    // );
+    this.state = {scrolled_manually_up: false}
+  }
+
+  componentDidUpdate() {
+    if (!this.state.scrolled_manually_up)
+      this.console_el.scrollTop = this.console_el.scrollHeight - this.console_el.clientHeight
+  }
+
+  console_scrolled() {
+    info("%i is top; currently at %i", this.console_el.scrollTop, this.console_el.scrollHeight - this.console_el.clientHeight)
+    this.setState({
+      scrolled_manually_up:
+        this.console_el.scrollTop !== this.console_el.scrollHeight - this.console_el.clientHeight
+    })
   }
 
   render() {
@@ -40,7 +50,9 @@ class GdbMiOutput extends React.Component {
           </li>
         </ul>
         <div className="card card-body m-1">
-          <div id="gdb_mi_output"
+          <div id="gdbmi-output-panel"
+               ref={el => this.console_el = el}
+               onScroll={this.console_scrolled.bind(this)}
                className='tiny monospace'>
             {this.state.gdb_mi_output}
           </div>
@@ -51,14 +63,6 @@ class GdbMiOutput extends React.Component {
 
   componentDidMount() {
     this.el = document.getElementById("gdb_mi_output");
-  }
-
-  componentDidUpdate() {
-    // this._debounced_scroll_to_bottom(); // note this is annoying
-  }
-
-  _scroll_to_bottom() {
-    // this.el.scrollTop = this.el.scrollHeight;
   }
 
   static add_mi_output(mi_obj) {

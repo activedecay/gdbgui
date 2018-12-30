@@ -2,8 +2,6 @@
  * The middle left div will be rendered with this content
  */
 
-/* global GeminiScrollbar */
-
 import {store} from "statorgfc";
 import React from "react";
 import SourceCode from "./SourceCode.jsx";
@@ -13,7 +11,6 @@ class MiddleLeft extends React.Component {
   constructor() {
     super();
     store.connectComponentState(this, [
-      "show_filesystem",
       "current_theme",
     ]);
 
@@ -24,18 +21,16 @@ class MiddleLeft extends React.Component {
 
   render() {
     return (
-      <div className={`col-${this.state.show_filesystem ? 5 : 6}`}>
-        <GeminiScrollbar ref={el => (this.source_code_container_node = el)}
-                         className={`${this.state.current_theme}`}
-                         id="code_container">
-          <SourceCode/>
-        </GeminiScrollbar>
+      <div ref={el => (this.source_code_container_node = el)}
+           className={`${this.state.current_theme}`}
+           id="code_container">
+        <SourceCode/>
       </div>
     );
   }
 
   componentDidMount() {
-    SourceCode.el_code_container = $("#code_container .gm-scroll-view");
+    SourceCode.el_code_container = $("#code_container");
 
     if (this.source_code_container_node) {
       this.source_code_container_node.onscroll = this.onscroll_container.bind(this);
@@ -52,7 +47,7 @@ class MiddleLeft extends React.Component {
 
     let fetching_for_top = false; // don't fetch for more at bottom and top at same time
     if (SourceCode.view_more_top_node) {
-      let { is_visible } = SourceCode.is_source_line_visible(
+      let {is_visible} = SourceCode.is_source_line_visible(
         $(SourceCode.view_more_top_node)
       );
       if (is_visible) {
@@ -62,7 +57,7 @@ class MiddleLeft extends React.Component {
     }
 
     if (!fetching_for_top && SourceCode.view_more_bottom_node) {
-      let { is_visible } = SourceCode.is_source_line_visible(
+      let {is_visible} = SourceCode.is_source_line_visible(
         $(SourceCode.view_more_bottom_node)
       );
       if (is_visible) {

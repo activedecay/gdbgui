@@ -5,16 +5,11 @@
     BABEL_ENV=development ./node_modules/.bin/webpack --mode development --watch --config webpack.config.js
 
 # todo
-1. npm install react-custom-scrollbars? it's installed
-1. panels cannot be resized (can this be solved with PanelGroup?)
-1. run yarn prettier to autoformat javascript code
-1. run black to autoformat python code
-1. figure out why `import . ` fails when passing --debug to `python -m gdbgui --debug`
+1. remove jquery from code panel scrolling
 1. tree icon does not display tree (huh? no idea what this means)
    oh, i guess i reproduced this. if the panel is collapsed, the tree doesn't show
-1. source code cannot be scrolled (on some browsers? gemini?)
-1. right sidebar cannot be scrolled (on some browsers? gemini?)
-1. gemini scrollbars require resize 
+1. npm install react-custom-scrollbars? it's installed
+1. figure out why `import . ` fails when passing --debug to `python -m gdbgui --debug`
 
 # existing bugs
 1. weird visual artifact in threads when args are present in frames
@@ -38,6 +33,8 @@
 
 # fixed
 1. re-layout the whole gui top-to-bottom, bootstrap it!
+1. automatically scroll containers(console, debugging window)
+1. panels cannot be resized (can this be solved with PanelGroup, yes it can)
 1. Copy button next to variable should provide feedback
 1. panels on right have unintuitive behavior, 
    including using buttons to toggle visibility of various panels

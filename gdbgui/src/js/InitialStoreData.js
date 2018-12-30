@@ -113,7 +113,6 @@ const initial_store_data = {
 
   gdb_console_entries: [],
 
-  show_filesystem: false,
   middle_panes_split_obj: {} // todo this thing is trash
 };
 

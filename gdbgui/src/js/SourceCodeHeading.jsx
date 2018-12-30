@@ -14,6 +14,7 @@ class SourceCodeHeading extends React.Component {
       "source_code_selection_state"
     ]);
   }
+
   render() {
     let line;
     if (

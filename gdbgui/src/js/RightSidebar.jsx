@@ -2,8 +2,6 @@
  * A component to show/hide variable exploration when hovering over a variable
  * in the source code
  */
-/* global GeminiScrollbar */
-
 import {store} from "statorgfc";
 import React from "react";
 
@@ -38,7 +36,6 @@ class RightSidebar extends React.Component {
     super()
     store.connectComponentState(this,
       [
-        "show_filesystem",
         "section_is_visible",
         "root_gdb_tree_var",
       ]
@@ -46,27 +43,24 @@ class RightSidebar extends React.Component {
     this.current_tree_var = this.state["root_gdb_tree_var"]
   }
 
-  componentWillUpdate() {
-  }
-
   render() {
     const section_is_visible = this.state.section_is_visible
     if (this.current_tree_var !== this.state["root_gdb_tree_var"]) {
-      store.set('section_is_visible', { ...section_is_visible, tree: true });
+      store.set('section_is_visible', {...section_is_visible, tree: true});
       store.set('tree_section_visibility_changed', true);
     }
     this.current_tree_var = this.state["root_gdb_tree_var"]
     return (
       <div id='right-sidebar'
-           className={`col-${this.state.show_filesystem ? 4 : 6}`}
            onMouseUp={onmouseup_in_parent_callback}
            onMouseMove={onmousemove_in_parent_callback}>
-        <GeminiScrollbar>
+        <div>
           <div>
             <button className="btn btn-primary btn-tiny mx-1"
                     data-toggle="collapse"
                     data-target="#threads-panel">
-              <span className={`tiny fa fa-chevron-${!section_is_visible['threads'] ? 'right' : 'down'}`}/> Threads
+              <span
+                className={`tiny fa fa-chevron-${!section_is_visible['threads'] ? 'right' : 'down'}`}/> Threads
             </button>
           </div>
           <div className={`collapse ${section_is_visible['threads'] ? "show" : ""}`}
@@ -80,7 +74,8 @@ class RightSidebar extends React.Component {
             <button className="btn btn-primary btn-tiny mx-1"
                     data-toggle="collapse"
                     data-target="#locals-panel">
-              <span className={`tiny fa fa-chevron-${!section_is_visible['locals'] ? 'right' : 'down'}`}/> Locals
+              <span
+                className={`tiny fa fa-chevron-${!section_is_visible['locals'] ? 'right' : 'down'}`}/> Locals
             </button>
           </div>
           <div className={`collapse ${section_is_visible['locals'] ? "show" : ""}`}
@@ -94,7 +89,8 @@ class RightSidebar extends React.Component {
             <button className="btn btn-primary btn-tiny mx-1"
                     data-toggle="collapse"
                     data-target="#expressions-panel">
-              <span className={`tiny fa fa-chevron-${!section_is_visible['expressions'] ? 'right' : 'down'}`}/> Expressions
+              <span
+                className={`tiny fa fa-chevron-${!section_is_visible['expressions'] ? 'right' : 'down'}`}/> Expressions
             </button>
           </div>
           <div className={`collapse ${section_is_visible['expressions'] ? "show" : ""}`}
@@ -106,7 +102,8 @@ class RightSidebar extends React.Component {
             <button className="btn btn-primary btn-tiny mx-1"
                     data-toggle="collapse"
                     data-target="#tree-panel">
-              <span className={`tiny fa fa-chevron-${!section_is_visible['tree'] ? 'right' : 'down'}`}/> Tree
+              <span
+                className={`tiny fa fa-chevron-${!section_is_visible['tree'] ? 'right' : 'down'}`}/> Tree
             </button>
           </div>
           <div className={`collapse ${section_is_visible['tree'] ? "show" : ""}`}
@@ -133,7 +130,8 @@ class RightSidebar extends React.Component {
             <button className="btn btn-primary btn-tiny mx-1"
                     data-toggle="collapse"
                     data-target="#memory-panel">
-              <span className={`tiny fa fa-chevron-${!section_is_visible['memory'] ? 'right' : 'down'}`}/> Memory
+              <span
+                className={`tiny fa fa-chevron-${!section_is_visible['memory'] ? 'right' : 'down'}`}/> Memory
             </button>
           </div>
           <div className={`collapse ${section_is_visible['memory'] ? "show" : ""}`}
@@ -147,7 +145,8 @@ class RightSidebar extends React.Component {
             <button className="btn btn-primary btn-tiny mx-1"
                     data-toggle="collapse"
                     data-target="#breakpoints-panel">
-              <span className={`tiny fa fa-chevron-${!section_is_visible['breakpoints'] ? 'right' : 'down'}`}/> Breakpoints
+              <span
+                className={`tiny fa fa-chevron-${!section_is_visible['breakpoints'] ? 'right' : 'down'}`}/> Breakpoints
             </button>
           </div>
           <div className={`collapse ${section_is_visible['breakpoints'] ? "show" : ""}`}
@@ -161,7 +160,8 @@ class RightSidebar extends React.Component {
             <button className="btn btn-primary btn-tiny mx-1"
                     data-toggle="collapse"
                     data-target="#signals-panel">
-              <span className={`tiny fa fa-chevron-${!section_is_visible['signals'] ? 'right' : 'down'}`}/> Signals
+              <span
+                className={`tiny fa fa-chevron-${!section_is_visible['signals'] ? 'right' : 'down'}`}/> Signals
             </button>
           </div>
           <div className={`collapse ${section_is_visible['signals'] ? "show" : ""}`}
@@ -175,7 +175,8 @@ class RightSidebar extends React.Component {
             <button className="btn btn-primary btn-tiny mx-1"
                     data-toggle="collapse"
                     data-target="#registers-panel">
-              <span className={`tiny fa fa-chevron-${!section_is_visible['registers'] ? 'right' : 'down'}`}/> Registers
+              <span
+                className={`tiny fa fa-chevron-${!section_is_visible['registers'] ? 'right' : 'down'}`}/> Registers
             </button>
           </div>
           <div className={`collapse ${section_is_visible['registers'] ? "show" : ""}`}
@@ -191,16 +192,17 @@ class RightSidebar extends React.Component {
                 <button className="btn btn-primary btn-tiny mx-1"
                         data-toggle="collapse"
                         data-target="#debug-panel">
-                  <span className={`tiny fa fa-chevron-${!section_is_visible['debug'] ? 'right' : 'down'}`}/> Debug
+                  <span
+                    className={`tiny fa fa-chevron-${!section_is_visible['debug'] ? 'right' : 'down'}`}/> Debug
                 </button>
               </div>
               <div className={`collapse ${section_is_visible['debug'] ? "show" : ""}`}
                    id="debug-panel">
-                <GdbMiOutput id="gdb_mi_output"/>
+                <GdbMiOutput/>
               </div>
             </React.Fragment>
           ) /* otherwise */ : null}
-        </GeminiScrollbar>
+        </div>
         <ToolTipTourguide
           position={"topleft"}
           content={step5}

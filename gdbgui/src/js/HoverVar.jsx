@@ -13,8 +13,8 @@ class HoverVar extends React.Component {
   static left = 0;
   static top = 0;
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     let b = $("body")
     // when hovering over a potential variable
     b.on("mouseover", "#code_table span.n", HoverVar.mouseover_variable);
@@ -37,25 +37,24 @@ class HoverVar extends React.Component {
       obj = hover_objs[0];
     }
     this.obj = obj;
-    if (obj) {
-      let position = {
-        left: HoverVar.left + "px",
-        top: HoverVar.top + "px",
-      };
-      return (
-        <div id="hovervar"
-             className='small bg-secondary position-absolute rounded p-1 shadow-lg'
-             style={position}>
-          <GdbVariable
-            obj={obj}
-            key={obj.expression}
-            expression={obj.expression}
-            expr_type="hover"/>
-        </div>
-      );
-    } else {
-      return <div className="small text-info">No variable hovered</div>;
+
+    let position = {
+      left: HoverVar.left + "px",
+      top: HoverVar.top + "px",
     }
+
+    return obj ?
+      <div id="hovervar"
+           className='small bg-secondary position-absolute rounded p-1 shadow-lg'
+           style={position}>
+        <GdbVariable
+          obj={obj}
+          key={obj.expression}
+          expression={obj.expression}
+          expr_type="hover"/>
+      </div>
+      /*otherwise */ : null;
+
   }
 
   static mouseover_variable(e) {

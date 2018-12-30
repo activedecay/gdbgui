@@ -190,7 +190,6 @@ class TopBar extends React.Component {
         "debug_in_reverse",
         "source_code_state",
         "waiting_for_response",
-        "show_filesystem",
         "latest_gdbgui_version",
         "gdbgui_version"
       ],
@@ -243,39 +242,6 @@ class TopBar extends React.Component {
           content={step3}/>
       </div>
     );
-  }
-
-  toggle_file_explorer() {
-    // let middle_pane_sizes = store.get("middle_panes_split_obj").getSizes(),
-    //   file_explorer_size = middle_pane_sizes[0],
-    //   source_size = middle_pane_sizes[1],
-    //   sidebar_size = middle_pane_sizes[2],
-    //   new_file_explorer_size,
-    //   new_source_size,
-    //   new_sidebar_size;
-
-    if (store.get("show_filesystem")) {
-      // hide it since it's shown right now
-      // new_file_explorer_size = 0;
-      // new_source_size = source_size + file_explorer_size / 2;
-      // new_sidebar_size = sidebar_size + file_explorer_size / 2;
-    } else {
-      // new_file_explorer_size = 30;
-      // new_source_size = Math.max(
-      //   30,
-      //   source_size - new_file_explorer_size / 2
-      // );
-      // new_sidebar_size = 99 - new_file_explorer_size - new_source_size;
-    }
-
-    store.set("show_filesystem", !store.get("show_filesystem"));
-    localStorage.setItem(
-      "show_filesystem",
-      JSON.stringify(store.get("show_filesystem"))
-    ); // save this for next session
-    store
-      .get("middle_panes_split_obj")
-    // .setSizes([new_file_explorer_size, new_source_size, new_sidebar_size]);
   }
 
   render() {
@@ -363,16 +329,8 @@ class TopBar extends React.Component {
             <div className="col-auto">
               <div className="btn-group btn-group-sm">
                 <button
-                  className="btn btn-primary"
-                  title="Toggle file explorer visibility"
-                  onClick={this.toggle_file_explorer}>
-                  {store.get("show_filesystem") ? "Hide filesystem" : "Show filesystem"}
-                </button>
-
-                <button
                   onClick={() => FileOps.fetch_assembly_cur_line()}
                   type="button"
-                  title="fetch disassembly"
                   className="btn btn-primary">
                   <span>Fetch disassembly</span>
                 </button>

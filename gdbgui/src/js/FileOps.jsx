@@ -6,8 +6,8 @@ import Actions from "./Actions.js";
 import React from "react";
 
 import debug from 'debug'
-const l = debug('gdbgui:gdbapi')
-debug.enabled('gdbgui:*')
+const info = debug('gdbgui:FileOps:info')
+// debug.enabled('gdbgui:FileOps:*')
 
 let FileFetcher = {
   _is_fetching: false,
@@ -112,7 +112,7 @@ let FileFetcher = {
     }
 
     if (FileOps.lines_are_cached(fullname, start_line, end_line)) {
-      l(
+      info(
         `not fetching ${fullname}:${start_line}:${end_line} because it's cached`
       );
       return;

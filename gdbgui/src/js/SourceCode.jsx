@@ -10,6 +10,9 @@ import Memory from "./Memory.jsx";
 import MemoryLink from "./MemoryLink.jsx";
 import constants from "./constants.js";
 import Actions from "./Actions.js";
+import debug from 'debug'
+const error = debug('gdbgui:SourceCode:error')
+error.enabled = true
 
 class SourceCode extends React.Component {
   static el_code_container = null; // todo: no jquery
@@ -81,7 +84,7 @@ class SourceCode extends React.Component {
       case states.SOURCE_CACHED: {
         let obj = FileOps.get_source_file_obj_from_cache(this.state.fullname_to_render);
         if (!obj) {
-          console.error("expected to find source file");
+          error("expected to find source file");
           return this.get_body_empty();
         }
         let paused_addr = this.state.paused_on_frame
@@ -141,7 +144,7 @@ class SourceCode extends React.Component {
         return this.get_body_empty();
       }
       default: {
-        console.error("developer error: unhandled state");
+        error("developer error: unhandled state");
         return this.get_body_empty();
       }
     }

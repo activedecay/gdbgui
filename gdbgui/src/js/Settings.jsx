@@ -10,7 +10,6 @@ class Settings extends React.Component {
   constructor() {
     super();
     store.connectComponentState(this, [
-      "debug",
       "current_theme",
       "themes",
       "gdb_version",

@@ -42,7 +42,7 @@ class GdbCommandInput extends React.Component {
     const interpreter = store.get("interpreter");
     const message = `enter ${interpreter} command e.g., \`signal SIGINT\``;
     return (
-      <div className="input-group input-group-sm">
+      <div className="input-group input-group-sm console-command-line">
         <div className="input-group-prepend">
             <span className="input-group-text" id="inputGroup-sizing-sm">
               {store.get("gdb_pid")} ({interpreter})

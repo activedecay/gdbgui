@@ -2,12 +2,14 @@
 
 import React from "react";
 
-import { store } from "statorgfc";
+import {store} from "statorgfc";
 import constants from "./constants.js";
 import GdbApi from "./GdbApi.jsx";
 import GdbCommandInput from "./GdbCommandInput.jsx";
 import GdbConsole from "./GdbConsole.jsx";
 import Actions from "./Actions.js";
+import ToolTipTourguide from "./ToolTipTourguide.jsx";
+import {step4} from "./TourGuide.jsx";
 
 let initial_sent_cmds = [];
 try {
@@ -29,7 +31,7 @@ const CommandHistory = {
   COMMAND_HISTORY_LIMIT: 500,
 
   // up arrow in console triggers this - go to end of array and move toward index 0
-  get_previous_command: function() {
+  get_previous_command: function () {
     // start at the end if history is not being cycled through
     CH.index = CH.is_history_being_used ? CH.index - 1 : CH.sent_cmds.length - 1;
     CH.is_history_being_used = true;
@@ -42,7 +44,7 @@ const CommandHistory = {
   },
 
   // down arrow in console triggers this - go to beginning of array and move toward last index
-  get_next_command: function() {
+  get_next_command: function () {
     // start at the beginning if history is not being cycled through
     CH.index = CH.is_history_being_used ? CH.index + 1 : 0;
     if (CH.index > CH.sent_cmds.length) {
@@ -57,7 +59,7 @@ const CommandHistory = {
 
     return CH.sent_cmds[CH.index];
   },
-  add_command: function(command) {
+  add_command: function (command) {
     CH.reset();
     if (CH.sent_cmds.indexOf(command) !== -1) {
       // don't add duplicate commands
@@ -72,7 +74,7 @@ const CommandHistory = {
     localStorage.setItem("sent_cmds", JSON.stringify(CH.sent_cmds));
   },
 
-  reset: function() {
+  reset: function () {
     CH.is_history_being_used = false;
     CH.index = 0;
   }
@@ -81,8 +83,8 @@ const CH = CommandHistory;
 
 // component that combines the gdb console output component and input component
 class GdbConsoleContainer extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       current_command_input: ""
@@ -93,6 +95,7 @@ class GdbConsoleContainer extends React.Component {
       this._store_change_callback.bind(this)
     );
   }
+
   _store_change_callback = () => {
     const autocomplete_options = store.get("gdb_autocomplete_options");
     if (autocomplete_options.length === 1) {
@@ -151,7 +154,7 @@ class GdbConsoleContainer extends React.Component {
     Actions.add_console_entries(command, constants.console_entry_type.SENT_COMMAND);
     Actions.execute_console_command(command);
 
-    this.setState({ current_command_input: "" });
+    this.setState({current_command_input: ""});
   };
 
   send_autocomplete_command = () => {
@@ -168,11 +171,14 @@ class GdbConsoleContainer extends React.Component {
 
     return (
       <div id="gdb_console_container">
+        <ToolTipTourguide
+          step_num={4}
+          position={"topleft"}
+          content={step4}/>
         <GdbConsole
           console_entries={gdb_console_entries}
           on_sent_command_clicked={this.on_sent_command_clicked}
-          on_autocomplete_text_clicked={this.on_autocomplete_text_clicked}
-        />
+          on_autocomplete_text_clicked={this.on_autocomplete_text_clicked}/>
         <GdbCommandInput
           current_command_input={current_command_input}
           on_current_command_input_change={this.on_current_command_input_change}
@@ -181,8 +187,7 @@ class GdbConsoleContainer extends React.Component {
           get_next_command_from_history={this.get_next_command_from_history}
           clear_console={() => Actions.clear_console()}
           run_command={this.run_command}
-          send_autocomplete_command={this.send_autocomplete_command}
-        />
+          send_autocomplete_command={this.send_autocomplete_command}/>
       </div>
     );
   }

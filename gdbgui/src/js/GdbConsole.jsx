@@ -5,6 +5,10 @@ import React from "react";
 import GdbApi from "./GdbApi.jsx";
 import constants from "./constants.js";
 
+import debug from 'debug'
+
+const info = debug('gdbgui:GdbConsole:info')
+
 const pre_escape = string => {
   return string
     .replace(/\\n/g, "\n")
@@ -13,22 +17,28 @@ const pre_escape = string => {
 };
 
 class GdbConsole extends React.Component {
-  componentDidUpdate() {
-    this.scroll_to_bottom();
-  }
-
-  scroll_to_bottom() {
-    this.console_end_element.scrollIntoView({
-      block: "end",
-      inline: "nearest",
-      behavior: "smooth"
-    });
+  constructor(props) {
+    super(props);
+    this.state = {scrolled_manually_up: false}
   }
 
   backtrace_button_clicked = event => {
     event.preventDefault();
     GdbApi.backtrace();
   };
+
+  componentDidUpdate() {
+    if (!this.state.scrolled_manually_up)
+      this.console_el.scrollTop = this.console_el.scrollHeight - this.console_el.clientHeight
+  }
+
+  console_scrolled() {
+    info("%i is top; currently at %i", this.console_el.scrollTop, this.console_el.scrollHeight - this.console_el.clientHeight)
+    this.setState({
+      scrolled_manually_up:
+        this.console_el.scrollTop !== this.console_el.scrollHeight - this.console_el.clientHeight
+    })
+  }
 
   render_entries(console_entries) {
     return console_entries.map((entry, index) => {
@@ -97,7 +107,7 @@ class GdbConsole extends React.Component {
             <div key={index}>
               {escaped_value}
               <button onClick={this.backtrace_button_clicked}
-                 className="btn btn-success btn-sm sans-serif">
+                      className="btn btn-success btn-sm sans-serif">
                 Re-enter
               </button>
             </div>
@@ -115,20 +125,20 @@ class GdbConsole extends React.Component {
                 fontFamily: "arial",
                 fontSize: "1.2em"
               }}>
-              <span style={{ fontWeight: "bold" }}>
+              <span style={{fontWeight: "bold"}}>
                 Enter gdbgui ad-free license key to support the project and remove this
                 message
               </span>&nbsp;
               <a
                 className="btn btn-success btn-sm"
-                style={{ color: "black" }}
+                style={{color: "black"}}
                 href={constants.gdbgui_upgrade_url}>
                 upgrade
               </a>
               <span> or </span>
               <a
                 className="btn btn-success btn-sm"
-                style={{ color: "black" }}
+                style={{color: "black"}}
                 href={constants.gdbgui_donate_url}>
                 {" "}
                 donate
@@ -141,13 +151,14 @@ class GdbConsole extends React.Component {
   }
 
   render() {
-    const { console_entries } = this.props;
+    const {console_entries} = this.props;
 
     return (
-      <GeminiScrollbar id='console'>
+      <div id='console'
+           ref={el => this.console_el = el}
+           onScroll={this.console_scrolled.bind(this)}>
         {this.render_entries(console_entries)}
-        <div ref={el => this.console_end_element = el}/>
-      </GeminiScrollbar>
+      </div>
     );
   }
 }

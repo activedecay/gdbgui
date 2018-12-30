@@ -27,7 +27,7 @@ import ReactDOM from "react-dom";
 
 import debug from 'debug'
 const info = debug('gdbgui:panelgroup:info')
-info.enabled = true
+// info.enabled = true
 
 class PanelGroup extends React.Component {
   // Load initial panel configuration from props
@@ -112,8 +112,10 @@ class PanelGroup extends React.Component {
       }
     }
 
+    const {panelSnap} = props;
     return {
-      panels: panels
+      panels: panels,
+      panelSnap
     };
   };
 
@@ -249,9 +251,7 @@ class PanelGroup extends React.Component {
         : boundingRect.width) -
       this.props.spacing * (this.props.children.length - 1);
     if (masterSize !== boundingSize) {
-      info("ERROR! SIZES DON'T MATCH!: %i %i %i %i", masterSize, boundingSize, panels[0], panels[1]);
-      // 2) Rectify the situation by adding all the unaccounted for space to the first panel
-      panels[panelIndex].size += boundingSize - masterSize;
+      info("something special happened... %i %i %i %i", masterSize, boundingSize, panels[0], panels[1]);
     }
 
     let minsize;
@@ -311,7 +311,7 @@ class PanelGroup extends React.Component {
 
     // Iterate through left panel's snap positions
     for (let i = 0; i < panels[panelIndex].snap.length; i++) {
-      if (Math.abs(panels[panelIndex].snap[i] - panels[panelIndex].size) < 20) {
+      if (Math.abs(panels[panelIndex].snap[i] - panels[panelIndex].size) < (this.state.panelSnap || 20)) {
         let delta = panels[panelIndex].snap[i] - panels[panelIndex].size;
 
         if (
@@ -327,10 +327,7 @@ class PanelGroup extends React.Component {
 
     // Iterate through right panel's snap positions
     for (let i = 0; i < panels[panelIndex + 1].snap.length; i++) {
-      if (
-        Math.abs(panels[panelIndex + 1].snap[i] - panels[panelIndex + 1].size) <
-        20
-      ) {
+      if (Math.abs(panels[panelIndex + 1].snap[i] - panels[panelIndex + 1].size) < (this.state.panelSnap || 20)) {
         let delta =
           panels[panelIndex + 1].snap[i] - panels[panelIndex + 1].size;
 
