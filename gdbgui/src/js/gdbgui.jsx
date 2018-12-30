@@ -31,7 +31,7 @@ import PanelGroup from "./PanelGroup";
 import debug from 'debug'
 const info = debug('gdbgui:gdbgui.jsx:info')
 const logStore = debug('gdbgui:store:info')
-info.enabled = debug_enabled
+//info.enabled = debug_enabled
 
 const store_options = {
   immutable: false,

@@ -9,8 +9,7 @@ import FileOps from "./FileOps.jsx"
 import debug from 'debug'
 
 const info = debug('gdbgui:GlobalEvents:info')
-debug.enable('gdbgui:GlobalEvents:info')
-info.enabled = true
+//debug.enable('gdbgui:GlobalEvents:info')
 
 const GlobalEvents = {
   init: function () {
@@ -32,6 +31,7 @@ const GlobalEvents = {
 
     if (e.target.nodeName !== "INPUT" && !modifier) {
       let char = String.fromCharCode(e.keyCode).toLowerCase();
+      info('you pressed %d %s', e.keyCode, String.fromCharCode(e.keyCode))
       if (e.keyCode === constants.slash_key_code) {
         $('.form-control.main-form-input').focus()
       } else if (e.keyCode === constants.semicolon_key_code) {

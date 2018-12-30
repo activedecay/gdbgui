@@ -113,39 +113,6 @@ class GdbConsole extends React.Component {
             </div>
           );
         }
-        case constants.console_entry_type.UPGRADE_GDBGUI: {
-          return (
-            <div
-              key={index}
-              style={{
-                color: "white",
-                minHeight: "1em",
-                margin: "2px",
-                whiteSpace: "pre",
-                fontFamily: "arial",
-                fontSize: "1.2em"
-              }}>
-              <span style={{fontWeight: "bold"}}>
-                Enter gdbgui ad-free license key to support the project and remove this
-                message
-              </span>&nbsp;
-              <a
-                className="btn btn-success btn-sm"
-                style={{color: "black"}}
-                href={constants.gdbgui_upgrade_url}>
-                upgrade
-              </a>
-              <span> or </span>
-              <a
-                className="btn btn-success btn-sm"
-                style={{color: "black"}}
-                href={constants.gdbgui_donate_url}>
-                {" "}
-                donate
-              </a>
-            </div>
-          );
-        }
       }
     });
   }

@@ -12,6 +12,7 @@ import constants from "./constants.js";
 import {step0, step3} from "./TourGuide.jsx";
 import Settings from "./Settings.jsx";
 import debug from 'debug'
+
 const info = debug('gdbgui:TopBar:info')
 // debug.enable('gdbgui:TopBar:info')
 
@@ -38,59 +39,33 @@ let click_shutdown_button = function () {
   }
 };
 
-let show_license = function () {
-  Actions.show_modal(
-    "gdbgui license",
-    <React.Fragment>
-      <a href="https://github.com/cs01/gdbgui/blob/master/LICENSE">
-        GNU General Public License v3.0
-      </a>
-      <p>Copyright © Chad Smith</p>
-      <p>This software can be used personally or commercially for free.</p>
-      <p>
-        Permissions of this strong copyleft license are conditioned on making available
-        complete source code of licensed works and modifications, which include larger
-        works using a licensed work, under the same license. Copyright and license notices
-        must be preserved. Contributors provide an express grant of patent rights.
-      </p>
-      <p>
-        If you wish to redistribute gdbgui as part of a closed source product, you can do
-        so for a fee. Contact grassfedcode@gmail.com for details.
-      </p>
-    </React.Fragment>
-  );
-};
-
 let About = {
   show_about: function () {
     Actions.show_modal(
       "About gdbgui",
       <React.Fragment>
-        A <a href="http://grassfedcode.com">grassfedcode</a> project to make the easiest
-        to use and most accessible gdb frontend.
-        <p/>
-        Copyright © Chad Smith
+        <p>
+          Original project gdb frontend by Copyright ©
+          Chad Smith. <a href="https://github.com/activedecay/gdbgui/blob/master/LICENSE">
+            This code's used under a license.
+          </a>
+        </p>
+        <p> Made beautiful by Professor Unbearable,
+          the <a href="https://www.unbear.pw/">Unbearable Professional</a>
+        </p>
+        <table>
+          <tbody>
+          <tr>
+            <td>gdb version: {store.get("gdb_version")}</td>
+          </tr>
+          <tr>
+            <td>gdb pid for this tab: {store.get("gdb_pid")}</td>
+          </tr>
+          </tbody>
+        </table>
       </React.Fragment>
     );
   }
-};
-
-let show_session_info = function () {
-  Actions.show_modal(
-    "session information",
-    <React.Fragment>
-      <table>
-        <tbody>
-        <tr>
-          <td>gdb version: {store.get("gdb_version")}</td>
-        </tr>
-        <tr>
-          <td>gdb pid for this tab: {store.get("gdb_pid")}</td>
-        </tr>
-        </tbody>
-      </table>
-    </React.Fragment>
-  );
 };
 
 const menu = (
@@ -120,45 +95,8 @@ const menu = (
         onClick={ToolTipTourguide.start_guide}>
         Show guide
       </a></li>
-      <li><a
-        className="dropdown-item"
-        onClick={show_session_info}>
-        Session Information
-      </a></li>
 
       <div className="dropdown-divider"/>
-      <li><a
-        className="dropdown-item"
-        href={constants.gdbgui_donate_url}>
-        Donate
-      </a></li>
-      <li><a
-        className="dropdown-item"
-        href="https://gitter.im/gdbgui/Lobby">
-        Chat room
-      </a></li>
-      <li><a
-        className="dropdown-item"
-        href="https://github.com/cs01/gdbgui">
-        GitHub
-      </a></li>
-      <li><a
-        className="dropdown-item"
-        href="http://gdbgui.com">
-        Homepage
-      </a></li>
-      <li><a
-        className="dropdown-item"
-        href="https://www.youtube.com/channel/UCUCOSclB97r9nd54NpXMV5A">
-        YouTube Channel
-      </a></li>
-
-      <div className="dropdown-divider"/>
-      <li><a
-        className="dropdown-item"
-        onClick={show_license}>
-        License
-      </a></li>
       <li><a
         className="dropdown-item"
         onClick={About.show_about}>
@@ -205,7 +143,7 @@ class TopBar extends React.Component {
   store_update_callback(keys) {
     if (keys.indexOf("waiting_for_response") !== -1) {
       this._clear_spinner_timeout();
-      this.setState({ show_spinner: false });
+      this.setState({show_spinner: false});
       if (this.state.waiting_for_response === true) {
         info('spinner false to true')
         this._set_spinner_timeout();
@@ -216,7 +154,7 @@ class TopBar extends React.Component {
   _set_spinner_timeout() {
     this.spinner_timeout = setTimeout(() => {
       if (this.state.waiting_for_response) {
-        this.setState({ show_spinner: true });
+        this.setState({show_spinner: true});
       }
     }, this.spinner_timeout_msec);
   }
@@ -227,7 +165,7 @@ class TopBar extends React.Component {
 
   toggle_assembly_flavor() {
     const flavor = this.state.assembly_flavor === "att" ? "intel" : "att";
-    this.setState({ assembly_flavor: flavor });
+    this.setState({assembly_flavor: flavor});
     GdbApi.set_assembly_flavor(flavor);
     Actions.clear_cached_assembly();
     FileOps.fetch_assembly_cur_line();

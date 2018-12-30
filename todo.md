@@ -8,8 +8,6 @@
 1. weed out bugs in other use cases? i don't really have
    a good way to exercise all the use cases myself as i
    am quite new to this project. i hope someone else can!
-1. show something special to denote when user's inferior is
-   running
 
 # existing bugs
 1. weird visual artifact in threads when args are present 
@@ -37,6 +35,12 @@
 1. register_table_data is 10000 lines long; allow filtering
 1. asm doesn't switch from at&t to intel until you click 
    twice
+1. version information in about
+1. show something special to denote when user's inferior is
+   running
+1. popover for keypress events? might just be distracting
+   but could be nice to remind the user they pressed
+   something and we saw it
 
 # fixed
 1. re-layout the whole gui top-to-bottom, bootstrap it!

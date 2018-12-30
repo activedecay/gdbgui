@@ -54,7 +54,6 @@ let constants = {
 
   default_max_lines_of_code_to_fetch: 500,
   gdbgui_upgrade_url: "https://grassfedcode.onfastspring.com/gdbgui-premium",
-  gdbgui_donate_url: "https://www.paypal.me/grassfedcode",
 
   keys_to_not_log_changes_in_console: ["gdb_mi_output", "gdb_console_entries"]
 };
