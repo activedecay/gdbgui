@@ -11,6 +11,8 @@ import {store} from "statorgfc";
 import GdbApi from "./GdbApi.jsx";
 import CopyToClipboard from "./CopyToClipboard.jsx";
 import Actions from "./Actions.js";
+import debug from 'debug'
+const error = debug('gdbgui:GdbVariable:error')
 
 
 /* note: these
@@ -629,7 +631,7 @@ class GdbVariable extends React.Component {
         GdbVariable.fetch_and_show_children_for_var(gdb_var_name);
       }
     } else {
-      console.error("developer error - expected to find gdb variable object");
+      error("developer error - expected to find gdb variable object");
     }
   }
 
@@ -778,7 +780,7 @@ class GdbVariable extends React.Component {
           // our new object to search is this child
           obj = child_obj;
         } else {
-          console.error(`could not find ${name_to_find}`);
+          error(`could not find ${name_to_find}`);
           return undefined;
         }
       }
@@ -786,7 +788,7 @@ class GdbVariable extends React.Component {
     } else if (objs.length === 0) {
       return undefined;
     } else {
-      console.error(
+      error(
         `Somehow found multiple local gdb variables with the name ${top_level_var_name}. Not using any of them. File a bug report with the developer.`
       );
       return undefined;

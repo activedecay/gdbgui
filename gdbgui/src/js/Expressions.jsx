@@ -80,7 +80,6 @@ class Expressions extends React.Component {
   }
 
   onclick_create() {
-    console.info('what')
     let trimmed_expr = _.trim(this.expression_input.value);
 
     if (trimmed_expr !== "") {

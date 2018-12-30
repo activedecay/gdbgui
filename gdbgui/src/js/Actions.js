@@ -1,12 +1,16 @@
-import { store } from "statorgfc";
+import {store} from "statorgfc";
 import GdbApi from "./GdbApi.jsx";
 import SourceCode from "./SourceCode.jsx";
 import Locals from "./Locals.jsx";
 import Memory from "./Memory.jsx";
 import constants from "./constants.js";
+// eslint-disable-next-line
 import React from "react";
 import Util from "./Util";
-void React; // using jsx implicity uses React
+
+import debug from 'debug'
+
+const error = debug('gdbgui:Actions:error')
 
 const parse_bin_and_args = user_input => {
   let list_of_params = Util.string_to_array_safe_quotes(user_input),
@@ -19,11 +23,11 @@ const parse_bin_and_args = user_input => {
     binary = list_of_params[0];
     args = list_of_params.slice(1, len);
   }
-  return { binary: binary, args: args.join(" ") };
+  return {binary: binary, args: args.join(" ")};
 }
 
 const Actions = {
-  clear_program_state: function() {
+  clear_program_state: function () {
     store.set("line_of_source_to_flash", undefined);
     store.set("paused_on_frame", undefined);
     store.set("selected_frame_num", 0);
@@ -33,14 +37,14 @@ const Actions = {
     Memory.clear_cache();
     Locals.clear();
   },
-  inferior_program_starting: function() {
+  inferior_program_starting: function () {
     store.set("inferior_program", constants.inferior_states.running);
     Actions.clear_program_state();
   },
-  inferior_program_resuming: function() {
+  inferior_program_resuming: function () {
     store.set("inferior_program", constants.inferior_states.running);
   },
-  inferior_program_paused: function(frame = {}) {
+  inferior_program_paused: function (frame = {}) {
     store.set("inferior_program", constants.inferior_states.paused);
     store.set(
       "source_code_selection_state",
@@ -54,7 +58,7 @@ const Actions = {
     SourceCode.make_current_line_visible();
     Actions.refresh_state_for_gdb_pause();
   },
-  inferior_program_exited: function() {
+  inferior_program_exited: function () {
     store.set("inferior_program", constants.inferior_states.exited);
     store.set("disassembly_for_missing_file", []);
     store.set("root_gdb_tree_var", null);
@@ -66,26 +70,26 @@ const Actions = {
   /**
    * Request relevant store information from gdb to refresh UI
    */
-  refresh_state_for_gdb_pause: function() {
+  refresh_state_for_gdb_pause: function () {
     GdbApi.run_gdb_command(GdbApi._get_refresh_state_for_pause_cmds());
   },
-  execute_console_command: function(command) {
+  execute_console_command: function (command) {
     if (store.get("refresh_state_after_sending_console_command")) {
       GdbApi.run_command_and_refresh_state(command);
     } else {
       GdbApi.run_gdb_command(command);
     }
   },
-  clear_console: function() {
+  clear_console: function () {
     store.set("gdb_console_entries", []);
   },
-  add_console_entries: function(entries, type) {
+  add_console_entries: function (entries, type) {
     if (!_.isArray(entries)) {
       entries = [entries];
     }
 
     const typed_entries = entries.map(entry => {
-      return { type: type, value: entry };
+      return {type: type, value: entry};
     });
 
     const previous_entries = store.get("gdb_console_entries");
@@ -141,7 +145,7 @@ const Actions = {
     $('#modal-dialog').show();
   },
   set_gdb_binary_and_arguments(user_input) {
-    const { binary, args } = parse_bin_and_args(user_input);
+    const {binary, args} = parse_bin_and_args(user_input);
     // remove list of source files associated with the loaded binary since we're loading a new one
     store.set("source_file_paths", []);
     store.set("language", "c_family");
@@ -219,7 +223,7 @@ const Actions = {
     const body = (
       <div>
         <span>This feature is only available in gdbgui pro.</span>
-        <p />
+        <p/>
         <a onClick={() => window.open("http://gdbgui.com")} className="btn btn-primary">
           Upgrade now
         </a>
@@ -229,7 +233,7 @@ const Actions = {
   },
   send_signal(signal_name, pid) {
     $.ajax({
-      beforeSend: function(xhr) {
+      beforeSend: function (xhr) {
         xhr.setRequestHeader(
           "x-csrftoken",
           initial_data.csrf_token
@@ -238,14 +242,14 @@ const Actions = {
       url: "/send_signal_to_pid",
       cache: false,
       type: "POST",
-      data: { signal_name: signal_name, pid: pid },
-      success: function(response) {
+      data: {signal_name: signal_name, pid: pid},
+      success: function (response) {
         Actions.add_console_entries(
           response.message,
           constants.console_entry_type.GDBGUI_OUTPUT
         );
       },
-      error: function(response) {
+      error: function (response) {
         if (response.responseJSON && response.responseJSON.message) {
           Actions.add_console_entries(
             _.escape(response.responseJSON.message),
@@ -257,9 +261,10 @@ const Actions = {
             constants.console_entry_type.STD_ERR
           );
         }
-        console.error(response);
+        error(response);
       },
-      complete: function() {}
+      complete: function () {
+      }
     });
   }
 };

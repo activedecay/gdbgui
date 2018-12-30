@@ -5,6 +5,8 @@ import Actions from "./Actions.js";
 import Util from "./Util.js";
 import FileOps from "./FileOps.jsx";
 import {FileLink} from "./Links.jsx";
+import debug from 'debug'
+const error = debug('gdbgui:Breakpoints:error')
 
 const BreakpointSourceLineCache = {
   _cache: {},
@@ -218,7 +220,7 @@ class Breakpoints extends React.Component {
         return b.number;
       }
     }
-    console.error(`could not find breakpoint for ${fullname}:${line}`);
+    error(`could not find breakpoint for ${fullname}:${line}`);
   }
 
   static delete_breakpoint(breakpoint_number) {

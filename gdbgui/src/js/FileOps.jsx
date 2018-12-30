@@ -7,6 +7,7 @@ import React from "react";
 
 import debug from 'debug'
 const info = debug('gdbgui:FileOps:info')
+const error = debug('gdbgui:FileOps:error')
 // debug.enabled('gdbgui:FileOps:*')
 
 let FileFetcher = {
@@ -303,11 +304,11 @@ const FileOps = {
       source_file_obj = FileOps.get_source_file_obj_from_cache(fullname);
     }
     if (!source_file_obj) {
-      console.error("Developer error: expected to find file object for " + fullname);
+      error("Developer error: expected to find file object for " + fullname);
       return;
     }
     if (!source_file_obj.num_lines_in_file) {
-      console.error('Developer error: expected key "num_lines_in_file"');
+      error('Developer error: expected key "num_lines_in_file"');
       return Infinity;
     }
     return source_file_obj.num_lines_in_file;
@@ -596,7 +597,7 @@ const FileOps = {
     FileOps.disassembly_addr_being_fetched = null;
 
     if (!_.isArray(mi_assembly) || mi_assembly.length === 0) {
-      console.error("Attempted to save unexpected assembly", mi_assembly);
+      error("Attempted to save unexpected assembly", mi_assembly);
     }
 
     let fullname = mi_assembly[0].fullname;

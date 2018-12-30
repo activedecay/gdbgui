@@ -1,5 +1,7 @@
 import React from "react";
 import { store } from "statorgfc";
+import debug from 'debug'
+const error = debug('gdbgui:CopyToClipboard:error')
 
 const template =
   '<div class="popover bg-success small" role="tooltip">' +
@@ -33,7 +35,7 @@ class CopyToClipboard extends React.Component {
           let textarea = store.get("textarea_to_copy_to_clipboard");
           textarea.value = this.props.content;
           textarea.select();
-          document.execCommand("copy") || console.error('failed to copy');
+          document.execCommand("copy") || error('failed to copy');
         }}>
         <a tabIndex="0"
            role="button"

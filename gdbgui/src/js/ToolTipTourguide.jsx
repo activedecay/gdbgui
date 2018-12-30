@@ -85,7 +85,6 @@ class ToolTipTourguide extends React.Component {
 
     let {top,right,bottom,left,position} = this.props
     let final = {top,right,bottom,left,...this.get_position(position)}
-    console.info(final)
 
     let is_last_step = this.props.step_num + 1 === this.state.num_tour_guide_steps
     return (

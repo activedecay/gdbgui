@@ -75,10 +75,11 @@ class Gdbgui extends React.Component {
     let mainPanels = [{ // code panel
       resize: 'stretch'
     }, { // rightSide panel
+      size: 300,
       minSize: 0,
       resize: 'dynamic',
       snap: [0],
-    },];
+    }];
     const filesystem_panel_width = {
       size: 300,
       minSize: 0,

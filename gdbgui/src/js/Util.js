@@ -1,4 +1,6 @@
 import {store} from "statorgfc";
+import debug from 'debug'
+const error = debug('gdbgui:Util:error')
 
 /**
  * Some general utility methods
@@ -14,7 +16,7 @@ const Util = {
         return default_val;
       }
     } catch (err) {
-      console.error(err);
+      error(err);
     }
     localStorage.removeItem(key);
     return default_val;
@@ -25,7 +27,7 @@ const Util = {
       let value = store.get(key);
       localStorage.setItem(key, JSON.stringify(value));
     } catch (err) {
-      console.error(err);
+      error(err);
     }
   },
   /**
