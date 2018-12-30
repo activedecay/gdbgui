@@ -1,9 +1,7 @@
 /**
  * This is the entrypoint to the frontend application.
- *
  * store (global state) is managed in a single location, and each time the store
  * changes, components are notified and update accordingly.
- *
  */
 
 /* global initial_data */

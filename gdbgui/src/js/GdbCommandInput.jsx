@@ -52,6 +52,7 @@ class GdbCommandInput extends React.Component {
           ref={el => {
             this.command_input_element = el;
           }}
+          title='Focus this console input with shortcut ";"'
           onKeyDown={this.on_command_input_key_down}
           onChange={event => on_current_command_input_change(event.target.value)}
           autoComplete="on"

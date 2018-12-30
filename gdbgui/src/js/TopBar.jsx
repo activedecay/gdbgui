@@ -325,14 +325,13 @@ class TopBar extends React.Component {
           </div>
         </div>
 
-
         <div className="container-fluid my-1">
           <div className="row">
             <div className="col-auto">
               <div className="btn-group btn-group-sm">
                 <button
                   onClick={() => FileOps.fetch_assembly_cur_line()}
-                  type="button"
+                  title='Fetch disassembly with shortcut "f"'
                   className="btn btn-primary">
                   <span>Fetch disassembly</span>
                 </button>
@@ -350,8 +349,8 @@ class TopBar extends React.Component {
                 <input
                   onKeyUp={onkeyup_jump_to_line}
                   autoComplete="on"
-                  title="Enter line number, then press enter"
-                  className="form-control md-grow"/>
+                  title='Enter line number and press enter (shortcut "g")'
+                  className="form-control md-grow go-to-line"/>
               </div>
             </div>
 

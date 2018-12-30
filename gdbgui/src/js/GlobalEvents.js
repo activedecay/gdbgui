@@ -31,10 +31,13 @@ const GlobalEvents = {
     let modifier = e.altKey || e.ctrlKey || e.metaKey;
 
     if (e.target.nodeName !== "INPUT" && !modifier) {
+      let char = String.fromCharCode(e.keyCode).toLowerCase();
       if (e.keyCode === constants.slash_key_code) {
         $('.form-control.main-form-input').focus()
       } else if (e.keyCode === constants.semicolon_key_code) {
         $('.form-control.command-prompt').focus()
+      } else if (char === "g") {
+        $('.form-control.go-to-line').focus()
       }
     }
   },

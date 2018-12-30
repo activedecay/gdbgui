@@ -17,9 +17,9 @@ class ControlButtons extends React.Component {
           id="run_button"
           onClick={() => GdbApi.click_run_button()}
           type="button"
-          title="Restart inferior program (r)"
+          title='Restart inferior program (shortcut "r")'
           className='btn'>
-          <span className="fa fa-redo-alt"/>
+          <span className="fa fa-dragon"/>
         </button>
 
         <button
@@ -36,7 +36,7 @@ class ControlButtons extends React.Component {
           onClick={() => GdbApi.click_continue_button()}
           type="button"
           title={
-            "Continue (c)" +
+            'Continue (shortcut "c")' +
             (initial_data.rr ? ". shift + c for reverse." : "")
           }
           className='btn'>
@@ -56,8 +56,8 @@ class ControlButtons extends React.Component {
           onClick={() => GdbApi.click_next_button()}
           type="button"
           title={
-            "Step over next function call (n or right-arrow)" +
-            (initial_data.rr ? ". shift + n for reverse." : "")
+            'Step over next function call (shortcut "n" or right-arrow)' +
+            (initial_data.rr ? '. shift-"n" for previous in reverse.' : "")
           }
           className='btn'>
           <span className="fa fa-step-forward"/>
@@ -68,8 +68,8 @@ class ControlButtons extends React.Component {
           onClick={() => GdbApi.click_step_button()}
           type="button"
           title={
-            "Step into function call (s or down-arrow)" +
-            (initial_data.rr ? ". shift + s for reverse." : "")
+            'Step into function call (shortcut "s" or down-arrow)' +
+            (initial_data.rr ? '. shift-"s" for reverse step.' : "")
           }
           className='btn'>
           <span className="fa fa-sign-in-alt fa-rotate-90"/>
@@ -79,7 +79,7 @@ class ControlButtons extends React.Component {
           id="return_button"
           onClick={() => GdbApi.click_return_button()}
           type="button"
-          title="Up one function stack frame (u or up-arrow)"
+          title='Up one function stack frame (shortcut "u" or up-arrow)'
           className='btn'>
           <span className="fa fa-sign-out-alt fa-rotate-270"/>
         </button>
@@ -88,8 +88,8 @@ class ControlButtons extends React.Component {
           id="next_instruction_button"
           onClick={() => GdbApi.click_next_instruction_button()}
           title={
-            "Next machine instruction over function calls (m)" +
-            (initial_data.rr ? ". shift + m for reverse." : "")
+            'Next machine instruction over function calls (shortcut "m")' +
+            (initial_data.rr ? '. shift-"m" for previous in reverse.' : "")
           }
           className='btn'>
           <span className='fa fa-robot'/>
@@ -98,8 +98,8 @@ class ControlButtons extends React.Component {
           id="step_instruction_button"
           onClick={() => GdbApi.click_step_instruction_button()}
           title={
-            "Step one machine instruction; steps into function calls (,)" +
-            (initial_data.rr ? ". shift + , for reverse." : "")
+            'Step one machine instruction; steps into function calls (shortcut ",")' +
+            (initial_data.rr ? '. shift-"," for reverse step.' : "")
           }
           className='btn'>
           <span className='fa fa-shoe-prints'/>

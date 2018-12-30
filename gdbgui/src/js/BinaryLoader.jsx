@@ -48,7 +48,7 @@ class BinaryLoader extends React.Component {
       title =
         "Loads the binary as executed with the arguments. Backslashes are treated as " +
         "escape characters. Windows users can either use two backslashes in paths, or " +
-        "forward slashes. (l)"
+        'forward slashes. Keyboard shortcut is "l"'
       placeholder = "path to target executable with arguments, e.g. /home/dev/code --args";
     } else if (this.state.target_type === TARGET_TYPES.server) {
       // https://sourceware.org/gdb/onlinedocs/gdb/GDB_002fMI-Target-Manipulation.html#GDB_002fMI-Target-Manipulation
@@ -110,7 +110,7 @@ class BinaryLoader extends React.Component {
           <input
             type="text"
             className="form-control main-form-input"
-            title='Focus this input control with (/)'
+            title='Focus this input control with shortcut "/"'
             placeholder={placeholder}
             list="past_binaries"
             onKeyUp={this.onkeyup_user_input.bind(this)}

@@ -1,5 +1,15 @@
 # todo
-1. weed out bugs in other use cases
+1. ??? keymap a shortcut for recording
+1. p keymaps to pause gdb
+1. max console entries should be a settings 
+   gdbgui/src/js/Actions.js:96 MAX_NUM_ENTRIES = 1000
+   remove this magic number
+1. remind users that while recording, reverse is functional
+1. weed out bugs in other use cases? i don't really have
+   a good way to exercise all the use cases myself as i
+   am quite new to this project. i hope someone else can!
+1. show something special to denote when user's inferior is
+   running
 
 # existing bugs
 1. weird visual artifact in threads when args are present 
@@ -33,6 +43,7 @@
 1. f keymaps to fetch disassembly
 1. / keymaps to focus load binary input
 1. ; keymaps to focus gdb command input
+1. g keymaps to focus go to line input
 1. do all tooltips the bootstrap way or else use title
 1. automatically scroll containers(console, debugging 
    window)

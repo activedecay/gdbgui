@@ -62,14 +62,14 @@ class GdbConsole extends React.Component {
         case constants.console_entry_type.GDBGUI_OUTPUT: {
           let escaped_value = pre_escape(entry.value);
           return (
-            <p key={index} className="console-line server-out" title="gdbgui output">
+            <p key={index} className="console-line server-out">
               {escaped_value}
             </p>
           );
         }
         case constants.console_entry_type.GDBGUI_OUTPUT_RAW: {
           return (
-            <p key={index} className="console-line server-out" title="gdbgui output">
+            <p key={index} className="console-line server-out">
               {entry.value}
             </p>
           );
