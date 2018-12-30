@@ -1,7 +1,7 @@
 import {store} from "statorgfc";
 import Actions from "./Actions.js";
-import ToolTip from "./ToolTip.jsx";
 import React from "react";
+
 
 /**
  * Settings modal when clicking the gear icon
@@ -24,6 +24,21 @@ class Settings extends React.Component {
     this.get_update_max_lines_of_code_to_fetch = this.get_update_max_lines_of_code_to_fetch.bind(
       this
     );
+  }
+
+  componentDidMount() {
+    const template =
+      '<div class="popover bg-success small" role="tooltip">' +
+      ' <div class="arrow arrow-bottom"/>' +
+      ' <h3 class="popover-header small"/>' +
+      ' <div class="popover-body small"/>' +
+      '</div>'
+
+    $('a.saved-setting[data-toggle="popover"]').popover({
+      trigger: 'focus',delay: { "show": 0, "hide": 400 },
+      placement: 'bottom',
+      template,
+    })
   }
 
   static toggle_key(key) {
@@ -59,16 +74,17 @@ class Settings extends React.Component {
                  defaultValue={store.get("max_lines_of_code_to_fetch")}
                  ref={el => (this.max_source_file_lines_input = el)}/>
           <div className="input-group-append">
-            <button
-              className="btn btn-success"
-              ref={n => (this.save_button = n)}
-              onClick={() => {
-                let new_value = parseInt(this.max_source_file_lines_input.value);
-                Actions.update_max_lines_of_code_to_fetch(new_value);
-                ToolTip.show_tooltip_on_node("saved!", this.save_button, 1);
-              }}>
-              save
-            </button>
+            <a tabIndex="0"
+               className="btn btn-success saved-setting"
+               onClick={() => {
+                 let new_value = parseInt(this.max_source_file_lines_input.value);
+                 Actions.update_max_lines_of_code_to_fetch(new_value);
+               }}
+               data-toggle="popover"
+               data-content="Saved!"
+               data-trigger="focus">
+              Save
+            </a>
           </div>
         </div>
 

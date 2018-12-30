@@ -5,15 +5,16 @@
     BABEL_ENV=development ./node_modules/.bin/webpack --mode development --watch --config webpack.config.js
 
 # todo
-1. remove jquery from code panel scrolling
 1. do all tooltips the bootstrap way or else use title
 1. npm install react-custom-scrollbars? it's installed
 1. figure out why `import . ` fails when passing --debug to `python -m gdbgui --debug`
 
 # existing bugs
 1. weird visual artifact in threads when args are present in frames
+1. determine if hidden trees don't show up in origin
 
 # todo nicities
+1. remove jquery from code panel scrolling
 1. panels should remember their sizes between refreshes
 1. side panel scrolls annoyingly during use 
   (it's the memory or registers tables. 

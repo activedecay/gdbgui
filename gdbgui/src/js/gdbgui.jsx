@@ -27,7 +27,6 @@ import initial_store_data from "./InitialStoreData.js";
 import MiddleLeft from "./MiddleLeft.jsx";
 import Modal from "./GdbguiModal.jsx";
 import RightSidebar from "./RightSidebar.jsx";
-import ToolTip from "./ToolTip.jsx";
 import TopBar from "./TopBar.jsx";
 import PanelGroup from "./PanelGroup";
 
@@ -112,7 +111,6 @@ class Gdbgui extends React.Component {
         {/* hidden things */}
         <Modal/>
         <HoverVar/>
-        <ToolTip/>
         <textarea
           style={{
             width: "0px",

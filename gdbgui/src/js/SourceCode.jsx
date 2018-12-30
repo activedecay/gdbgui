@@ -2,7 +2,7 @@
  * A component to render source code, assembly, and break points
  */
 
-import { store } from "statorgfc";
+import {store} from "statorgfc";
 import React from "react";
 import FileOps from "./FileOps.jsx";
 import Breakpoints from "./Breakpoints.jsx";
@@ -11,6 +11,7 @@ import MemoryLink from "./MemoryLink.jsx";
 import constants from "./constants.js";
 import Actions from "./Actions.js";
 import debug from 'debug'
+
 const error = debug('gdbgui:SourceCode:error')
 error.enabled = true
 
@@ -66,7 +67,7 @@ class SourceCode extends React.Component {
     let source_is_displayed =
       this.state.source_code_state === constants.source_code_states.SOURCE_CACHED ||
       this.state.source_code_state ===
-        constants.source_code_states.ASSM_AND_SOURCE_CACHED;
+      constants.source_code_states.ASSM_AND_SOURCE_CACHED;
     if (source_is_displayed) {
       if (this.state.make_current_line_visible) {
         let success = SourceCode.make_current_line_visible();
@@ -88,8 +89,8 @@ class SourceCode extends React.Component {
           return this.get_body_empty();
         }
         let paused_addr = this.state.paused_on_frame
-            ? this.state.paused_on_frame.addr
-            : null,
+          ? this.state.paused_on_frame.addr
+          : null,
           start_linenum = store.get("source_linenum_to_display_start"),
           end_linenum = store.get("source_linenum_to_display_end");
         return this.get_body_source_and_assm(
@@ -105,21 +106,24 @@ class SourceCode extends React.Component {
       case states.FETCHING_SOURCE: {
         return (
           <tr>
-            <td>fetching source, please wait</td>
+            <td><span className='small sans-serif text-info m-2 ml-4'>
+              Fetching source, please wait...</span>
+            </td>
           </tr>
         );
       }
       case states.ASSM_CACHED: {
         let paused_addr = this.state.paused_on_frame
-            ? this.state.paused_on_frame.addr
-            : null,
+          ? this.state.paused_on_frame.addr
+          : null,
           assm_array = this.state.disassembly_for_missing_file;
         return this.get_body_assembly_only(assm_array, paused_addr);
       }
       case states.FETCHING_ASSM: {
         return (
           <tr>
-            <td>fetching assembly, please wait</td>
+            <td><span className='small sans-serif text-info m-2 ml-4'>
+              Fetching assembly, please wait</span></td>
           </tr>
         );
       }
@@ -129,14 +133,16 @@ class SourceCode extends React.Component {
           : null;
         return (
           <tr>
-            <td>cannot access address {paused_addr}</td>
+            <td><span className='small sans-serif text-danger m-2 ml-4'>
+              Cannot access address {paused_addr}</span></td>
           </tr>
         );
       }
       case states.FILE_MISSING: {
         return (
           <tr>
-            <td>file not found: {this.state.fullname_to_render}</td>
+            <td><span className='small sans-serif text-danger m-2 ml-4'>
+              File not found: {this.state.fullname_to_render}</span></td>
           </tr>
         );
       }
@@ -149,6 +155,7 @@ class SourceCode extends React.Component {
       }
     }
   }
+
   click_gutter(line_num) {
     Breakpoints.add_or_remove_breakpoint(this.state.fullname_to_render, line_num);
   }
@@ -200,7 +207,7 @@ class SourceCode extends React.Component {
       let i = 0;
       for (let assm of assembly_for_line) {
         assembly_content.push(SourceCode._get_assm_content(i, assm, paused_addr));
-        assembly_content.push(<br key={"br" + i} />);
+        assembly_content.push(<br key={"br" + i}/>);
         i++;
       }
     }
@@ -209,18 +216,19 @@ class SourceCode extends React.Component {
       <tr id={id} key={line_num_being_rendered} className={`${row_class.join(" ")}`}>
         {this.get_linenum_td(line_num_being_rendered, gutter_cls)}
 
-        <td style={{ verticalAlign: "top" }} className="loc">
-          <span className="wsp" dangerouslySetInnerHTML={{ __html: source }} />
+        <td style={{verticalAlign: "top"}} className="loc">
+          <span className="wsp" dangerouslySetInnerHTML={{__html: source}}/>
         </td>
 
         <td className="assembly">{assembly_content}</td>
       </tr>
     );
   }
+
   get_linenum_td(linenum, gutter_cls = "") {
     return (
       <td
-        style={{ verticalAlign: "top", width: "30px" }}
+        style={{verticalAlign: "top", width: "30px"}}
         className={"line_num " + gutter_cls}
         onClick={() => {
           this.click_gutter(linenum);
@@ -234,7 +242,8 @@ class SourceCode extends React.Component {
    * example return value: mov $0x400684,%edi(00) main+8 0x0000000000400585
    */
   static _get_assm_content(key, assm, paused_addr) {
-    let opcodes = assm.opcodes ? <span className="instruction-line">{`(${assm.opcodes})`}</span> : null,
+    let opcodes = assm.opcodes ?
+      <span className="instruction-line">{`(${assm.opcodes})`}</span> : null,
       instruction = Memory.make_addrs_into_links_react(assm.inst),
       func_name = assm["func-name"],
       offset = assm.offset,
@@ -244,8 +253,8 @@ class SourceCode extends React.Component {
       asterisk = <span
         className={`fa fa-chevron-right ${on_current_instruction ? 'visible' : 'invisible'}`}/>
     return (
-      <span key={key} style={{ whiteSpace: "nowrap" }} className={cls}>
-        {asterisk} <MemoryLink addr={addr} style={{ paddingRight: "5px" }} />
+      <span key={key} style={{whiteSpace: "nowrap"}} className={cls}>
+        {asterisk} <MemoryLink addr={addr} style={{paddingRight: "5px"}}/>
         {opcodes /* i.e. mov */}
         <span className="instruction-line">{instruction}</span>
         {func_name ? (
@@ -279,30 +288,32 @@ class SourceCode extends React.Component {
       return false;
     }
   }
+
   get_view_more_tr(fullname, linenum, node_key) {
     return (
       <tr key={linenum} className="srccode" ref={el => (SourceCode[node_key] = el)}>
-        <td />
+        <td/>
         <td
           onClick={() => {
             Actions.view_file(fullname, linenum);
           }}
-          style={{ fontStyle: "italic", paddingLeft: "10px" }}
-          className="pointer"
-        >
+          style={{fontStyle: "italic", paddingLeft: "10px"}}
+          className="pointer">
           view more
         </td>
       </tr>
     );
   }
+
   get_end_of_file_tr(linenum) {
     return (
       <tr key={linenum}>
-        <td />
-        <td />
+        <td/>
+        <td/>
       </tr>
     );
   }
+
   get_line_nums_to_render(source_code_obj, start_linenum, line_to_flash, end_linenum) {
     let start_linenum_to_render = start_linenum;
     let end_linenum_to_render = end_linenum;
@@ -328,8 +339,9 @@ class SourceCode extends React.Component {
         linenum--;
       }
     }
-    return { start_linenum_to_render, end_linenum_to_render };
+    return {start_linenum_to_render, end_linenum_to_render};
   }
+
   get_body_source_and_assm(
     fullname,
     source_code_obj,
@@ -342,7 +354,7 @@ class SourceCode extends React.Component {
     let body = [];
 
     let bkpt_lines = Breakpoints.get_breakpoint_lines_for_file(
-        this.state.fullname_to_render
+      this.state.fullname_to_render
       ),
       disabled_breakpoint_lines = Breakpoints.get_disabled_breakpoint_lines_for_file(
         this.state.fullname_to_render
@@ -436,13 +448,17 @@ class SourceCode extends React.Component {
   get_body_empty() {
     return (
       <tr>
-        <td><span className='small sans-serif text-info m-2 ml-4'>No source code or assembly to display</span></td>
+        <td><span className='small sans-serif text-info m-2 ml-4'>
+          No source code or assembly to display</span>
+        </td>
       </tr>
     );
   }
+
   static make_current_line_visible() {
     return SourceCode._make_jq_selector_visible($("#scroll_to_line"));
   }
+
   static is_source_line_visible(jq_selector) {
     if (jq_selector.length !== 1) {
       // make sure something is selected before trying to scroll to it
@@ -459,11 +475,12 @@ class SourceCode extends React.Component {
         top_of_line >= top_of_container && bottom_of_line <= bottom_of_container;
 
     if (is_visible) {
-      return { is_visible: true, top_of_line, top_of_table, height_of_container };
+      return {is_visible: true, top_of_line, top_of_table, height_of_container};
     } else {
-      return { is_visible: false, top_of_line, top_of_table, height_of_container };
+      return {is_visible: false, top_of_line, top_of_table, height_of_container};
     }
   }
+
   /**
    * Scroll to a jQuery selection in the source code table
    * Used to jump around to various lines
@@ -483,7 +500,7 @@ class SourceCode extends React.Component {
         // line is out of view, scroll so it's in the middle of the table
         const time_to_scroll = 0;
         let scroll_top = top_of_line - (top_of_table + height_of_container / 2);
-        SourceCode.el_code_container.animate({ scrollTop: scroll_top }, time_to_scroll);
+        SourceCode.el_code_container.animate({scrollTop: scroll_top}, time_to_scroll);
       }
       return true;
     } else {
