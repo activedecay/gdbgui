@@ -94,6 +94,7 @@ class Gdbgui extends React.Component {
         <div className='application-main-panel'>
           <PanelGroup borderClassName='divider-border'
                       direction='column'
+                      panelWidths={[{},{minSize:30, snap:[30]}]}
                       spacing={4}>
             <PanelGroup borderClassName='divider-border'
                         panelWidths={mainPanels}
