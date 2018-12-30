@@ -5,8 +5,6 @@
     BABEL_ENV=development ./node_modules/.bin/webpack --mode development --watch --config webpack.config.js
 
 # todo
-1. tree icon does not display tree (huh? no idea what this means)
-   oh, i figured it out. i reproduced this. if the panel is collapsed, the tree doesn't show.
 1. remove jquery from code panel scrolling
 1. do all tooltips the bootstrap way or else use title
 1. npm install react-custom-scrollbars? it's installed

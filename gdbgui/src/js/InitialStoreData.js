@@ -23,7 +23,7 @@ const initial_store_data = {
     threads: true,
     locals: false,
     expressions: false,
-    tree: false,
+    tree: true,
     memory: true,
     breakpoints: true,
     signals: false,
