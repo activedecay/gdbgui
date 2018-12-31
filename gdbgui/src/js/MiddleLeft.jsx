@@ -6,6 +6,7 @@ import {store} from "statorgfc";
 import React from "react";
 import SourceCode from "./SourceCode.jsx";
 import FileOps from "./FileOps.jsx";
+import {Scrollbars} from 'react-custom-scrollbars'
 
 class MiddleLeft extends React.Component {
   constructor() {
@@ -21,11 +22,11 @@ class MiddleLeft extends React.Component {
 
   render() {
     return (
-      <div ref={el => (this.source_code_container_node = el)}
+      <Scrollbars ref={el => (this.source_code_container_node = el)}
            className={`${this.state.current_theme}`}
            id="code_container">
         <SourceCode/>
-      </div>
+      </Scrollbars>
     );
   }
 

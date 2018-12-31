@@ -27,11 +27,13 @@ import Modal from "./GdbguiModal.jsx";
 import RightSidebar from "./RightSidebar.jsx";
 import TopBar from "./TopBar.jsx";
 import PanelGroup from "./PanelGroup";
+import Util from './Util'
 
 import debug from 'debug'
+
 const info = debug('gdbgui:gdbgui.jsx:info')
 const logStore = debug('gdbgui:store:info')
-//info.enabled = debug_enabled
+// info.enabled = true
 
 const store_options = {
   immutable: false,
@@ -48,12 +50,27 @@ if (info.enabled) {
     return true;
   });
 }
-// make this visible in the console
-window.store = store;
 
 class Gdbgui extends React.Component {
   constructor(props) {
     super(props)
+    let top_3_panels = [{ // filesystem panel
+      size: 300,
+      minSize: 0,
+      resize: 'dynamic',
+      snap: [0],
+    }, { // code panel
+      resize: 'stretch'
+    }, { // rightSide panel
+      size: 300,
+      minSize: 0,
+      resize: 'dynamic',
+      snap: [0],
+    }];
+    let outer_panels = [{}, {minSize: 30, snap: [30]}];
+    outer_panels = Util.get_local_storage("outer_panel_layout", outer_panels);
+    top_3_panels = Util.get_local_storage("top_3_panel_layout", top_3_panels);
+    this.state = {top_3_panels,outer_panels}
   }
 
   componentWillMount() {
@@ -68,22 +85,19 @@ class Gdbgui extends React.Component {
     }
   }
 
+  outer_panels_update(panels) {
+    this.setState({outer_panels: panels})
+    store.set("outer_panel_layout", panels)
+    Util.persist_value_for_key("outer_panel_layout")
+  }
+
+  top_3_panels_update(panels) {
+    this.setState({top_3_panels: panels})
+    store.set("top_3_panel_layout", panels)
+    Util.persist_value_for_key("top_3_panel_layout")
+  }
+
   render() {
-    let mainPanels = [{ // code panel
-      resize: 'stretch'
-    }, { // rightSide panel
-      size: 300,
-      minSize: 0,
-      resize: 'dynamic',
-      snap: [0],
-    }];
-    const filesystem_panel_width = {
-      size: 300,
-      minSize: 0,
-      resize: 'dynamic',
-      snap: [0],
-    }
-      mainPanels.unshift(filesystem_panel_width);
     return (
       <div className='application-container'>
         <TopBar initial_user_input={initial_data.initial_binary_and_args}/>
@@ -92,10 +106,12 @@ class Gdbgui extends React.Component {
         <div className='application-main-panel'>
           <PanelGroup borderClassName='divider-border'
                       direction='column'
-                      panelWidths={[{},{minSize:30, snap:[30]}]}
+                      panelWidths={this.state.outer_panels}
+                      onUpdate={this.outer_panels_update.bind(this)}
                       spacing={4}>
             <PanelGroup borderClassName='divider-border'
-                        panelWidths={mainPanels}
+                        panelWidths={this.state.top_3_panels}
+                        onUpdate={this.top_3_panels_update.bind(this)}
                         panelSnap={60}
                         spacing={4}>
               <FoldersView/>

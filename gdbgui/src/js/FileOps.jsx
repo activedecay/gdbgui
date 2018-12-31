@@ -8,7 +8,7 @@ import React from "react";
 import debug from 'debug'
 const info = debug('gdbgui:FileOps:info')
 const error = debug('gdbgui:FileOps:error')
-// debug.enabled('gdbgui:FileOps:*')
+// debug.enabled('gdbgui:FileOps:*') // note, these statements enable logging in localStorage
 
 let FileFetcher = {
   _is_fetching: false,

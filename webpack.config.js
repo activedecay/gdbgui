@@ -13,12 +13,12 @@ module.exports = {
   },
   plugins: [
     new webpack.ProvidePlugin({
-      vis: 'vis',
       $: 'jquery',
-      jQuery: 'jquery',
-      Split: 'split.js',
-      moment: 'moment',
       _: 'lodash',
+      jQuery: 'jquery',
+      moment: 'moment',
+      state: 'statorgfc',
+      vis: 'vis',
     })
   ],
   module: {

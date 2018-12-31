@@ -15,7 +15,7 @@ void React; // needed when using JSX, but not marked as used
 import debug from 'debug'
 const log = debug('gdbgui:GdbApi:info')
 const error = debug('gdbgui:GdbApi:error')
-// debug.enabled('gdbgui:GdbApi:*')
+// debug.enabled('gdbgui:GdbApi:*') // note, these statements enable logging in localStorage
 
 /**
  * This object contains methods to interact with

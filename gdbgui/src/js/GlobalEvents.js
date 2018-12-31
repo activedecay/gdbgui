@@ -9,7 +9,7 @@ import FileOps from "./FileOps.jsx"
 import debug from 'debug'
 
 const info = debug('gdbgui:GlobalEvents:info')
-//debug.enable('gdbgui:GlobalEvents:info')
+//debug.enable('gdbgui:GlobalEvents:*') // note, these statements enable logging in localStorage
 
 const GlobalEvents = {
   init: function () {

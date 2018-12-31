@@ -14,7 +14,7 @@ import Settings from "./Settings.jsx";
 import debug from 'debug'
 
 const info = debug('gdbgui:TopBar:info')
-// debug.enable('gdbgui:TopBar:info')
+// debug.enable('gdbgui:TopBar:*') // note, these statements enable logging in localStorage
 
 let onkeyup_jump_to_line = e => {
   if (e.keyCode === constants.ENTER_BUTTON_NUM) {

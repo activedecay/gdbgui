@@ -306,7 +306,7 @@ class GdbVariable extends React.Component {
               </button> : null}
             {mi_obj.can_plot ?
               <button className='btn btn-tiny'
-                      title={`${mi_obj.show_plot ? 'delete' : 'create'} x/y plot`}
+                      title={`${mi_obj.show_plot ? 'Delete' : 'Create'} x/y plot`}
                       onClick={() => GdbVariable.click_toggle_plot(mi_obj.name)}>
                 <span className={`fa ${mi_obj.show_plot ? 'fa-trash' : 'fa-line-chart'}`}/>
               </button>

@@ -14,6 +14,7 @@ import Threads from "./Threads.jsx";
 import ToolTipTourguide from "./ToolTipTourguide.jsx";
 import {step5} from "./TourGuide.jsx";
 import Util from "./Util.js";
+import {Scrollbars} from 'react-custom-scrollbars'
 
 let onmouseup_in_parent_callbacks = [],
   onmousemove_in_parent_callbacks = [];
@@ -47,7 +48,7 @@ class RightSidebar extends React.Component {
     }
     this.current_tree_var = this.state["root_gdb_tree_var"]
     return (
-      <div id='right-sidebar'
+      <Scrollbars id='right-sidebar'
            onMouseUp={onmouseup_in_parent_callback}
            onMouseMove={onmousemove_in_parent_callback}>
         <div>
@@ -203,7 +204,7 @@ class RightSidebar extends React.Component {
           position={"topleft"}
           content={step5}
           step_num={5}/>
-      </div>
+      </Scrollbars>
     );
   }
 
@@ -224,7 +225,7 @@ class RightSidebar extends React.Component {
       selector.on('hide.bs.collapse', () => {
         const update = {
           ...Util.get_local_storage("section_is_visible", {}),
-          [`${section}`]: false
+          [section]: false
         }
         store.set("section_is_visible", update)
         Util.persist_value_for_key("section_is_visible")
@@ -232,7 +233,7 @@ class RightSidebar extends React.Component {
       selector.on('show.bs.collapse', () => {
         const update = {
           ...Util.get_local_storage("section_is_visible", {}),
-          [`${section}`]: true
+          [section]: true
         }
         store.set("section_is_visible", update)
         Util.persist_value_for_key("section_is_visible")

@@ -26,7 +26,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import debug from 'debug'
-const info = debug('gdbgui:panelgroup:info')
+
+const info = debug('gdbgui:PanelGroup:info')
+// debug.enable('gdbgui:PanelGroup:*') // note, these statements enable logging in localStorage
 // info.enabled = true
 
 class PanelGroup extends React.Component {
@@ -174,7 +176,7 @@ class PanelGroup extends React.Component {
       };
 
       // patch in the background color if it was supplied as a prop
-      Object.assign(panelStyle, { backgroundColor: this.props.panelColor });
+      Object.assign(panelStyle, {backgroundColor: this.props.panelColor});
 
       // give position info to children
       const metadata = {
@@ -231,7 +233,7 @@ class PanelGroup extends React.Component {
       this.props.direction === "row" ? delta.x : delta.y,
       tempPanels
     );
-    this.setState({ panels: tempPanels });
+    this.setState({panels: tempPanels});
     this.onUpdate(tempPanels);
     return returnDelta;
   };
@@ -405,12 +407,12 @@ class PanelGroup extends React.Component {
       } else {
         tempPanels[panelIndex].size = size;
       }
-      this.setState({ panels: tempPanels });
+      this.setState({panels: tempPanels});
 
       if (panelIndex > 0) {
-        this.handleResize(panelIndex - 1, { x: 0, y: 0 });
+        this.handleResize(panelIndex - 1, {x: 0, y: 0});
       } else if (this.state.panels.length > 2) {
-        this.handleResize(panelIndex + 1, { x: 0, y: 0 });
+        this.handleResize(panelIndex + 1, {x: 0, y: 0});
       }
 
       if (callback) {
@@ -448,7 +450,7 @@ class Panel extends React.Component {
 
   // Utility function to wait for next render before executing a function
   onNextFrame = callback => {
-    setTimeout(function() {
+    setTimeout(function () {
       window.requestAnimationFrame(callback);
     }, 0);
   };
@@ -460,7 +462,7 @@ class Panel extends React.Component {
 
       this.props.onWindowResize(
         this.props.panelID,
-        { x: rect.width, y: rect.height }
+        {x: rect.width, y: rect.height}
 
         // recalcalculate again if the width is below minimum
         // Kinda hacky, but for large resizes like fullscreen/Restore
@@ -509,7 +511,7 @@ class Divider extends React.Component {
 
     this.state = {
       dragging: false,
-      initPos: { x: null, y: null }
+      initPos: {x: null, y: null}
     };
   }
 
@@ -543,7 +545,7 @@ class Divider extends React.Component {
 
   // End drag state
   onMouseUp = e => {
-    this.setState({ dragging: false });
+    this.setState({dragging: false});
     e.stopPropagation();
     e.preventDefault();
   };
@@ -643,9 +645,8 @@ class Divider extends React.Component {
       <div
         className={className}
         style={style.divider}
-        onMouseDown={this.onMouseDown}
-      >
-        <div style={style.handle} />
+        onMouseDown={this.onMouseDown}>
+        <div style={style.handle}/>
       </div>
     );
   }
