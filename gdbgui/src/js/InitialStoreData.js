@@ -2,6 +2,9 @@
 /* global debug_enabled */
 import constants from "./constants.js";
 import Util from './Util'
+import debug from 'debug'
+const info = debug('gdbgui:InitialStoreData:info')
+info.enabled = true
 
 /**
  * The initial store data. Keys cannot be added after initialization.

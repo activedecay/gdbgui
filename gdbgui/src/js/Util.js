@@ -1,6 +1,9 @@
 import {store} from "statorgfc";
 import debug from 'debug'
+const info = debug('gdbgui:Util:info')
 const error = debug('gdbgui:Util:error')
+info.enabled = true
+error.enabled = true
 
 /**
  * Some general utility methods

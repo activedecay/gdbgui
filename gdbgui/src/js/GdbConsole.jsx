@@ -4,6 +4,7 @@ import React from "react";
 
 import GdbApi from "./GdbApi.jsx";
 import constants from "./constants.js";
+import {Scrollbars} from 'react-custom-scrollbars'
 
 import debug from 'debug'
 
@@ -121,11 +122,11 @@ class GdbConsole extends React.Component {
     const {console_entries} = this.props;
 
     return (
-      <div id='console'
+      <Scrollbars id='console'
            ref={el => this.console_el = el}
            onScroll={this.console_scrolled.bind(this)}>
         {this.render_entries(console_entries)}
-      </div>
+      </Scrollbars>
     );
   }
 }

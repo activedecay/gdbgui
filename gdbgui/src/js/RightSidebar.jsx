@@ -40,6 +40,13 @@ class RightSidebar extends React.Component {
     this.current_tree_var = this.state["root_gdb_tree_var"]
   }
 
+  render_view({style, ...props}) {
+    return (
+      // fix up a missing pixel
+      <div style={{...style, marginBottom: -16}} {...props}/>
+    );
+  }
+
   render() {
     const section_is_visible = this.state.section_is_visible
     if (this.current_tree_var !== this.state["root_gdb_tree_var"]) {
@@ -49,8 +56,9 @@ class RightSidebar extends React.Component {
     this.current_tree_var = this.state["root_gdb_tree_var"]
     return (
       <Scrollbars id='right-sidebar'
-           onMouseUp={onmouseup_in_parent_callback}
-           onMouseMove={onmousemove_in_parent_callback}>
+                  renderView={this.render_view.bind(this)}
+                  onMouseUp={onmouseup_in_parent_callback}
+                  onMouseMove={onmousemove_in_parent_callback}>
         <div>
           <div>
             <button className="btn btn-primary btn-tiny mx-1"

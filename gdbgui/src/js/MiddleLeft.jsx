@@ -7,6 +7,10 @@ import React from "react";
 import SourceCode from "./SourceCode.jsx";
 import FileOps from "./FileOps.jsx";
 import {Scrollbars} from 'react-custom-scrollbars'
+// import debug from 'debug'
+
+// const info = debug('gdbgui:MiddleLeft:info')
+// info.enabled = true
 
 class MiddleLeft extends React.Component {
   constructor() {
@@ -20,11 +24,19 @@ class MiddleLeft extends React.Component {
     this.fetch_more_at_top_timeout = null;
   }
 
+  render_view({style, ...props}) {
+    return (
+      // fix up a missing pixel
+      <div style={{...style, marginBottom: -16}} {...props}/>
+    );
+  }
+
   render() {
     return (
       <Scrollbars ref={el => (this.source_code_container_node = el)}
-           className={`${this.state.current_theme}`}
-           id="code_container">
+                  renderView={this.render_view.bind(this)}
+                  className={`${this.state.current_theme}`}
+                  id="code_container">
         <SourceCode/>
       </Scrollbars>
     );
